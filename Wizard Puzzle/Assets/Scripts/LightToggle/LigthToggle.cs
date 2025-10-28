@@ -2,15 +2,41 @@ using UnityEngine;
 
 public class LigthToggle : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Light References")]
+    public GameObject lightOnOverlay;
+    public GameObject lightOffOverlay;
+
+    private bool lightOn = true;  
+
+
+    private void Update()
     {
-        
+        SwitchLight();
+        ToggleLight();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ToggleLight()
     {
-        
+        if (lightOn)
+        {  
+            lightOnOverlay.SetActive(true);
+            lightOffOverlay.SetActive(false);
+            HiddenObjectManager.lightState = 1;
+        }
+        else if(!lightOn)
+        {
+            lightOnOverlay.SetActive(false);
+            lightOffOverlay.SetActive(true);
+            HiddenObjectManager.lightState = 0;
+        }
+    }
+
+    private void SwitchLight()
+    {
+        // change this into PlayerInput.fithButtonIsPressed if using the PlayerInput script
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            lightOn = !lightOn;        
+        }
     }
 }

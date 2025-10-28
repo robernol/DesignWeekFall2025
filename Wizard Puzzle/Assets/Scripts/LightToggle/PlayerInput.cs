@@ -51,7 +51,5 @@ public class PlayerInput : MonoBehaviour
             sixButtonIsPressed = true;
         }
         else sixButtonIsPressed = false;
-
-
     }
 }
