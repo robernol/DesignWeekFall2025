@@ -34,7 +34,7 @@ public class LigthToggle : MonoBehaviour
     private void SwitchLight()
     {
         // change this into PlayerInput.fithButtonIsPressed if using the PlayerInput script
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (PlayerInput.leftIsPressed)
         {
             lightOn = !lightOn;        
         }

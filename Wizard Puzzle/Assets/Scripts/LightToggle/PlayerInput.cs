@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public static bool firButtonIsPressed { get; private set; }
-    public static bool secButtonIsPressed { get; private set; }
-    public static bool thirdButtonIsPressed { get; private set; }
-    public static bool fourButtonIsPressed { get; private set; }
-    public static bool fithButtonIsPressed { get; private set; }
-    public static bool sixButtonIsPressed { get; private set; }
+    public static bool leftIsPressed { get; private set; }
+    public static bool upIsPressed { get; private set; }
+    public static bool rightIsPressed { get; private set; }
+    public static bool downIsPressed { get; private set; }
+    public static bool firIsPressed { get; private set; }
+    public static bool secIsPressed { get; private set; }
 
     private void Update()
     {
@@ -18,38 +18,44 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            firButtonIsPressed = true;
+            leftIsPressed = true;
+            Debug.Log("left");  
         }
-        else firButtonIsPressed = false;
+        else leftIsPressed = false;
 
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            secButtonIsPressed = true;
-        }
-        else secButtonIsPressed = false;
+            upIsPressed = true;
+            Debug.Log("up")
+;        }
+        else upIsPressed = false;
         
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            thirdButtonIsPressed = true;
+            rightIsPressed = true;
+            Debug.Log("Right");
         }
-        else thirdButtonIsPressed = false;
+        else rightIsPressed = false;
         
         if(Input.GetKeyDown(KeyCode.DownArrow))
         {
-            fourButtonIsPressed = true;
+            downIsPressed = true;
+            Debug.Log("down");
         }
-        else fourButtonIsPressed = false;
+        else downIsPressed = false;
         
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            fithButtonIsPressed = true;
+            firIsPressed = true;
+            Debug.Log("first");
         }
-        else fithButtonIsPressed = false;
+        else firIsPressed = false;
 
         if(Input.GetMouseButtonDown(1))
         {
-            sixButtonIsPressed = true;
+            secIsPressed = true;
+            Debug.Log("second");
         }
-        else sixButtonIsPressed = false;
+        else secIsPressed = false;
     }
 }
