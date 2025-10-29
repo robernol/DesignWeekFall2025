@@ -1,8 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class BarcodeTest : MonoBehaviour
 {
+
+    #region Resources
     /// <summary>
     /// The barcode scanner looks like a USB keyboard, but grabbing the whole code from Input.inputString
     /// does not get the whole code, it may be split across a few frames. This time is how much time to
@@ -14,8 +17,15 @@ public class BarcodeTest : MonoBehaviour
     private string currentCode; //current content of the scanned in value
     private string lastCode; //additional copy of the scan so we can trigger a single event on change
     private float lastReceivedInput = 0f; //timestamp for beginning of the scan (trigger pressed)
+    
     [Tooltip("Event raised when the barcode has been scanned. Passes the code as a string.")]
     public UnityEvent<string> OnCodeRead;
+    #endregion
+
+    [Header("References")]
+    public TextMeshProUGUI showingText;
+
+
     void Start()
     {
         currentCode = "";
@@ -24,7 +34,6 @@ public class BarcodeTest : MonoBehaviour
 
     void Update()
     {
-
         if (Time.time > lastReceivedInput + timeDelay)
         {
             currentCode = "";
@@ -42,17 +51,30 @@ public class BarcodeTest : MonoBehaviour
             OnCodeRead.Invoke(currentCode.Trim());
         }
 
+      //  UpdaetBarcodeOutput();
+    }
+
+    public void UpdateText()
+    {
+            showingText.text = currentCode;
+    }
+
+    private void UpdaetBarcodeOutput()
+    {
         //This section just checks to see what the output string is. 
         if (currentCode == "Sip")
         {
             Debug.Log("current code is " + currentCode);
-        } else if (currentCode == "Num")
-        {
-            Debug.Log("current code is "+ currentCode);
-        } else if (currentCode == "Lob")
+        }
+        else if (currentCode == "Num")
         {
             Debug.Log("current code is " + currentCode);
-        } else if (currentCode == "Grk")
+        }
+        else if (currentCode == "Lob")
+        {
+            Debug.Log("current code is " + currentCode);
+        }
+        else if (currentCode == "Grk")
         {
             Debug.Log("current code is " + currentCode);
         }
