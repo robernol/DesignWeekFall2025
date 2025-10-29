@@ -188,7 +188,7 @@ public class Match : MonoBehaviour
             {
                 sr.color = Color.black;
                 Debug.Log("LOSE!");
-                inSequence = 6;
+                inSequence = 0;
             }
         }
     }
