@@ -18,6 +18,6 @@ public class GlobalVariableManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    } 
 
 }
