@@ -89,8 +89,8 @@ public class Match : MonoBehaviour
         }
         else if (timer - Time.time > displayTime * (0.75))
         {
-            st.color = Color.gray7;
-            sb.color = Color.gray7;
+            st.color = Color.gray5;
+            sb.color = Color.gray5;
         }
 
         else if (timer - Time.time > displayTime * (0.6))
@@ -99,8 +99,8 @@ public class Match : MonoBehaviour
         }
         else if (timer - Time.time > displayTime * (0.55))
         {
-            st.color = Color.gray7;
-            sb.color = Color.gray7;
+            st.color = Color.gray5;
+            sb.color = Color.gray5;
         }
 
         else if (timer - Time.time > displayTime * (0.4))
@@ -109,8 +109,8 @@ public class Match : MonoBehaviour
         }
         else if (timer - Time.time > displayTime * (0.35))
         {
-            st.color = Color.gray7;
-            sb.color = Color.gray7;
+            st.color = Color.gray5;
+            sb.color = Color.gray5;
         }
 
         else if (timer - Time.time > displayTime * (0.2))
@@ -119,8 +119,8 @@ public class Match : MonoBehaviour
         }
         else if (timer - Time.time > displayTime * (0.15))
         {
-            st.color = Color.gray7;
-            sb.color = Color.gray7;
+            st.color = Color.gray5;
+            sb.color = Color.gray5;
         }
 
         else if (timer - Time.time > 0)
