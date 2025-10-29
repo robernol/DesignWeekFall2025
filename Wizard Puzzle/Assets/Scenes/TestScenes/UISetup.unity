@@ -250,10 +250,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ABCDEFGHI
+  m_text: ABCDEFGHIJKLMNOPQURSTU
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e64a33cdfbe57eb46825eb10daafeb6d, type: 2}
-  m_sharedMaterial: {fileID: -1609073168262495132, guid: e64a33cdfbe57eb46825eb10daafeb6d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70391272206163c4b9a38a1bbee0d6f3, type: 2}
+  m_sharedMaterial: {fileID: -521909926454561776, guid: 70391272206163c4b9a38a1bbee0d6f3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
