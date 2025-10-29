@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    public static PlayerInput Instance;
+
     public static bool leftIsPressed { get; private set; }
     public static bool upIsPressed { get; private set; }
     public static bool rightIsPressed { get; private set; }
@@ -9,6 +11,25 @@ public class PlayerInput : MonoBehaviour
     public static bool firIsPressed { get; private set; }
     public static bool secIsPressed { get; private set; }
 
+    public static bool leftIsHeld { get; private set; }
+    public static bool upIsHeld { get; private set; }
+    public static bool rightIsHeld { get; private set; }
+    public static bool downIsHeld { get; private set; }
+    public static bool firIsHeld { get; private set; }
+    public static bool secIsHeld { get; private set; }
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Update()
     {
         UpdateInput();   
@@ -16,6 +37,7 @@ public class PlayerInput : MonoBehaviour
 
     private void UpdateInput()
     {
+        #region For presseing input
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             leftIsPressed = true;
@@ -57,5 +79,51 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("second");
         }
         else secIsPressed = false;
+        #endregion
+
+        #region For holding input
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            leftIsHeld = true;
+            Debug.Log("left");
+        }
+        else leftIsHeld = false;
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            upIsHeld = true;
+            Debug.Log("up")
+;
+        }
+        else upIsHeld = false;
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            rightIsHeld = true;
+            Debug.Log("Right");
+        }
+        else rightIsHeld = false;
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            downIsHeld = true;
+            Debug.Log("down");
+        }
+        else downIsHeld = false;
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            firIsHeld = true;
+            Debug.Log("first");
+        }
+        else firIsHeld = false;
+
+        if (Input.GetMouseButton(1))
+        {
+            secIsHeld = true;
+            Debug.Log("second");
+        }
+        else secIsHeld = false;
+        #endregion
     }
 }
