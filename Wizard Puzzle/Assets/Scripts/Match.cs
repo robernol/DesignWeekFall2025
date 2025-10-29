@@ -24,36 +24,36 @@ public class Match : MonoBehaviour
     {
         if (!isDisplayingSequence)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.H))
             {
                 st.color = Color.greenYellow;
                 sb.color = Color.greenYellow;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.UpArrow);
+                CheckCorrectInput(KeyCode.H);
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 st.color = Color.orange;
                 sb.color = Color.orange;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.LeftArrow);
+                CheckCorrectInput(KeyCode.J);
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 st.color = Color.red;
                 sb.color = Color.red;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.DownArrow);
+                CheckCorrectInput(KeyCode.L);
             }
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.K))
             {
                 st.color = Color.yellow;
                 sb.color = Color.yellow;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.RightArrow);
+                CheckCorrectInput(KeyCode.K);
             }
 
             if (Time.time > timer)
@@ -89,8 +89,8 @@ public class Match : MonoBehaviour
         }
         else if (timer - Time.time > displayTime * (0.75))
         {
-            st.color = Color.gray5;
-            sb.color = Color.gray5;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
         }
 
         else if (timer - Time.time > displayTime * (0.6))
@@ -99,8 +99,8 @@ public class Match : MonoBehaviour
         }
         else if (timer - Time.time > displayTime * (0.55))
         {
-            st.color = Color.gray5;
-            sb.color = Color.gray5;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
         }
 
         else if (timer - Time.time > displayTime * (0.4))
@@ -109,8 +109,8 @@ public class Match : MonoBehaviour
         }
         else if (timer - Time.time > displayTime * (0.35))
         {
-            st.color = Color.gray5;
-            sb.color = Color.gray5;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
         }
 
         else if (timer - Time.time > displayTime * (0.2))
@@ -119,8 +119,8 @@ public class Match : MonoBehaviour
         }
         else if (timer - Time.time > displayTime * (0.15))
         {
-            st.color = Color.gray5;
-            sb.color = Color.gray5;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
         }
 
         else if (timer - Time.time > 0)
@@ -129,8 +129,8 @@ public class Match : MonoBehaviour
         }
         else
         {
-            st.color = Color.white;
-            sb.color = Color.white;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
             isDisplayingSequence = false;
         }
     }
@@ -143,44 +143,44 @@ public class Match : MonoBehaviour
             float r = UnityEngine.Random.Range(0.0f, 4.0f);
             if (r <= 0.99f)
             {
-                sequence[i] = KeyCode.UpArrow;
+                sequence[i] = KeyCode.H;
             }
             else if (r <= 1.99f)
             {
-                sequence[i] = KeyCode.LeftArrow;
+                sequence[i] = KeyCode.J;
             }
             else if (r <= 2.99f)
             {
-                sequence[i] = KeyCode.DownArrow;
+                sequence[i] = KeyCode.L;
             }
             else
             {
-                sequence[i] = KeyCode.RightArrow;
+                sequence[i] = KeyCode.K;
             }
         }
     }
 
     void DisplayColour(KeyCode k)
     {
-        if (k == (KeyCode.UpArrow))
+        if (k == (KeyCode.H))
         {
             st.color = Color.greenYellow;
             sb.color = Color.greenYellow;
         }
 
-        if (k == (KeyCode.LeftArrow))
+        if (k == (KeyCode.J))
         {
             st.color = Color.orange;
             sb.color = Color.orange;
         }
 
-        if (k == (KeyCode.DownArrow))
+        if (k == (KeyCode.L))
         {
             st.color = Color.red;
             sb.color = Color.red;
         }
 
-        if (k == (KeyCode.RightArrow))
+        if (k == (KeyCode.K))
         {
             st.color = Color.yellow;
             sb.color = Color.yellow;
