@@ -25,7 +25,10 @@ public class Pentagram : MonoBehaviour
         l4 = false;
         l5 = false;
         completed = false;
-        
+        if (GlobalVariableManager.solvedPuzzle2 == true)
+        {
+            completed = true;
+        }
     }
 
     void Update()
@@ -181,23 +184,23 @@ public class Pentagram : MonoBehaviour
                 Debug.Log("WIN");
                 p1.GetComponent<Animator>().enabled = true;
                 p1.GetComponent<SpriteRenderer>().color = Color.white;
-                p1.transform.position = new Vector3(p1.transform.position.x, p1.transform.position.y + 0.1f, p1.transform.position.z);
+                p1.transform.position = new Vector3(p1.transform.position.x, p1.transform.position.y + 0.2f, p1.transform.position.z);
 
                 p2.GetComponent<Animator>().enabled = true;
                 p2.GetComponent<SpriteRenderer>().color = Color.white;
-                p2.transform.position = new Vector3(p2.transform.position.x, p2.transform.position.y + 0.1f, p2.transform.position.z);
+                p2.transform.position = new Vector3(p2.transform.position.x, p2.transform.position.y + 0.2f, p2.transform.position.z);
 
                 p3.GetComponent<Animator>().enabled = true;
                 p3.GetComponent<SpriteRenderer>().color = Color.white;
-                p3.transform.position = new Vector3(p3.transform.position.x, p3.transform.position.y + 0.1f, p3.transform.position.z);
+                p3.transform.position = new Vector3(p3.transform.position.x, p3.transform.position.y + 0.2f, p3.transform.position.z);
 
                 p4.GetComponent<Animator>().enabled = true;
                 p4.GetComponent<SpriteRenderer>().color = Color.white;
-                p4.transform.position = new Vector3(p4.transform.position.x, p4.transform.position.y + 0.1f, p4.transform.position.z);
+                p4.transform.position = new Vector3(p4.transform.position.x, p4.transform.position.y + 0.2f, p4.transform.position.z);
 
                 p5.GetComponent<Animator>().enabled = true;
                 p5.GetComponent<SpriteRenderer>().color = Color.white;
-                p5.transform.position = new Vector3(p5.transform.position.x, p5.transform.position.y + 0.1f, p5.transform.position.z);
+                p5.transform.position = new Vector3(p5.transform.position.x, p5.transform.position.y + 0.2f, p5.transform.position.z);
 
                 baphomet.GetComponent<SpriteRenderer>().enabled = true;
 
