@@ -32,7 +32,7 @@ public class TimerScript : MonoBehaviour
             isCountingDown = false;
             UpdateTimeDisplay();
             // Timer has finished, add additional logic here: lose condition
-            Debug.Log("Time's up!");
+            GlobalVariableManager.timeIsDone = true;
         }
 
     }

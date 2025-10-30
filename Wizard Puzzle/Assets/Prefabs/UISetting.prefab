@@ -119,19 +119,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 510099749990945278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChangeTesting, Assembly-CSharp
-        m_MethodName: LoadPuzzleScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Scene5
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &841844815105377138
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,19 +239,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2571069168528113609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChangeTesting, Assembly-CSharp
-        m_MethodName: LoadPuzzleScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Scene1
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &887475298172732772
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,19 +462,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5776955725704591930}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChangeTesting, Assembly-CSharp
-        m_MethodName: LoadPuzzleScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Scene2
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1737586220510248487
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,19 +833,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8356985364520225235}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChangeTesting, Assembly-CSharp
-        m_MethodName: LoadPuzzleScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Scene6
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &4013196354946113193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,19 +1089,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3682447403537758995}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChangeTesting, Assembly-CSharp
-        m_MethodName: LoadPuzzleScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Scene4
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &6117567842717921399
 GameObject:
   m_ObjectHideFlags: 0
