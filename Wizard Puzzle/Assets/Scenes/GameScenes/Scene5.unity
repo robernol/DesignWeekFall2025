@@ -674,7 +674,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 1669584375262008580, guid: 6e14ef2ddf6b803448a4f6623a49103d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -975,6 +975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794b85a4c5631ba43bfdffdb9df740c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleLIghtToggle
+  normalFontAsset: {fileID: 0}
+  puzzleNum: {fileID: 0}
+  hint: {fileID: 0}
   lightOffOverlay: {fileID: 734564}
   lightObjects: []
   darkObjects:

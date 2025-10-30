@@ -18,7 +18,6 @@ public class Puzzle2 : MonoBehaviour
     public float minX;
     public float minWid;
     public float maxWid;
-    private Vector2 goalPos;
 
     [Header("Pointer")]
     public GameObject pointer;
@@ -29,11 +28,13 @@ public class Puzzle2 : MonoBehaviour
     public float offset;
     [HideInInspector] public float pointerSpeed;
     private int direction;
+    private float oriSpeed;
 
 
     private void Start()
     {
         instruction.SetActive(false);
+        hint.SetActive(false);
 
         if (GlobalVariableManager.solvedPuzzle1)
         {
@@ -43,7 +44,7 @@ public class Puzzle2 : MonoBehaviour
 
         GoalBarRandomnizer();
         pointerSpeed = Random.Range(minSpeed, maxSpeed);
-        Debug.Log($"Pointer Speed : {pointerSpeed}");
+        oriSpeed = pointerSpeed;
         direction = 1;
     }
 
@@ -132,7 +133,7 @@ public class Puzzle2 : MonoBehaviour
 
     public void OnPointerExitGoal()
     {
-        Debug.Log("Pointer is Not in goal!");
-        // do stuff if player fails
+        pointerSpeed = oriSpeed;
+        GlobalVariableManager.chanceToLoseGame += 0.05f;
     }
 }
