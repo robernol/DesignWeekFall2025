@@ -5,22 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class Pentagram : MonoBehaviour
 {
-    public GameObject p1, p2, p3, p4, p5;
+    GameObject[] lineDrawer;
+    public GameObject p1, p2, p3, p4, p5, lineDraw;
     GameObject lastSelected;
     Vector3[] start, end;
-    int lines;
+    public int lines;
     bool l1, l2, l3, l4, l5;
     void Start()
     {
         start = new Vector3[5];
         end = new Vector3[5];
         lines = 0;
+        lineDrawer = new GameObject[5];
         lastSelected = null;
         l1 = false;
         l2 = false;
         l3 = false;
         l4 = false;
         l5 = false;
+        
     }
 
     void Update()
@@ -37,6 +40,8 @@ public class Pentagram : MonoBehaviour
             }
             else
             {
+                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+
                 start[lines] = lastSelected.transform.position;
                 end[lines] = p1.transform.position;
                 lastSelected = null;
@@ -56,6 +61,8 @@ public class Pentagram : MonoBehaviour
             }
             else
             {
+                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+
                 start[lines] = lastSelected.transform.position;
                 end[lines] = p2.transform.position;
                 lastSelected = null;
@@ -75,6 +82,8 @@ public class Pentagram : MonoBehaviour
             }
             else
             {
+                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+
                 start[lines] = lastSelected.transform.position;
                 end[lines] = p3.transform.position;
                 lastSelected = null;
@@ -94,6 +103,8 @@ public class Pentagram : MonoBehaviour
             }
             else
             {
+                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+
                 start[lines] = lastSelected.transform.position;
                 end[lines] = p4.transform.position;
                 lastSelected = null;
@@ -113,6 +124,8 @@ public class Pentagram : MonoBehaviour
             }
             else
             {
+                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+
                 start[lines] = lastSelected.transform.position;
                 end[lines] = p5.transform.position;
                 lastSelected = null;
@@ -132,6 +145,7 @@ public class Pentagram : MonoBehaviour
         for (int i = 0; i < lines; i++)
         {
             Debug.DrawLine(start[i], end[i], Color.red);
+            lineDrawer[i].GetComponent<PentagramLines>().CreateLine(start[i], end[i]);
         }
 
         if (lines >= 5)
@@ -161,7 +175,7 @@ public class Pentagram : MonoBehaviour
             }
             if (l1 && l2 &&  l3 && l4 && l5)
             {
-                SceneManager.LoadScene("WIN");
+                Debug.Log("WIN");
             }
             else
             {
@@ -175,6 +189,11 @@ public class Pentagram : MonoBehaviour
                 l3 = false;
                 l4 = false;
                 l5 = false;
+                for (int i = 0; i < 5; i++)
+                {
+                    Destroy(lineDrawer[i]);
+                }
+                lineDrawer = new GameObject[5];
             }
         }
     }
