@@ -571,6 +571,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Puzzle 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5613493181150109875, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1439144624}
+    - target: {fileID: 5613493181150109875, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6009273652440921711, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

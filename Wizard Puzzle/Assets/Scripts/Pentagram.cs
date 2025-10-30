@@ -1,6 +1,7 @@
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pentagram : MonoBehaviour
 {
@@ -160,11 +161,20 @@ public class Pentagram : MonoBehaviour
             }
             if (l1 && l2 &&  l3 && l4 && l5)
             {
-                Debug.Log("WIN!");
+                SceneManager.LoadScene("WIN");
             }
             else
             {
                 Debug.Log("LOSE!");
+                start = new Vector3[5];
+                end = new Vector3[5];
+                lines = 0;
+                lastSelected = null;
+                l1 = false;
+                l2 = false;
+                l3 = false;
+                l4 = false;
+                l5 = false;
             }
         }
     }

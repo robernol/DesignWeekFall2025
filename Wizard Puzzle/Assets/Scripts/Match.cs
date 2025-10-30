@@ -5,61 +5,66 @@ using UnityEngine;
 
 public class Match : MonoBehaviour
 {
-    SpriteRenderer sr;
-    public float timer;
+    public SpriteRenderer st, sb;
+    public float timer, displayTime;
     bool isDisplayingSequence;
     KeyCode[] sequence;
     public int inSequence;
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
         timer = Time.time;
         isDisplayingSequence = false;
         SequenceRandomizer();
         inSequence = 0;
+        displayTime = 5;
     }
 
     void Update()
     {
         if (!isDisplayingSequence)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.H))
             {
-                sr.color = Color.greenYellow;
+                st.color = Color.greenYellow;
+                sb.color = Color.greenYellow;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.UpArrow);
+                CheckCorrectInput(KeyCode.H);
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                sr.color = Color.orange;
+                st.color = Color.orange;
+                sb.color = Color.orange;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.LeftArrow);
+                CheckCorrectInput(KeyCode.J);
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.L))
             {
-                sr.color = Color.red;
+                st.color = Color.red;
+                sb.color = Color.red;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.DownArrow);
+                CheckCorrectInput(KeyCode.L);
             }
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.K))
             {
-                sr.color = Color.yellow;
+                st.color = Color.yellow;
+                sb.color = Color.yellow;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.RightArrow);
+                CheckCorrectInput(KeyCode.K);
             }
 
             if (Time.time > timer)
             {
-                sr.color = Color.white;
+                st.color = Color.gray9;
+                sb.color = Color.gray9;
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                timer = Time.time + 4.5f;
+                timer = Time.time + displayTime;
                 SequenceRandomizer();
                 isDisplayingSequence = true;
                 inSequence = 0;
@@ -73,44 +78,49 @@ public class Match : MonoBehaviour
     }
     void DisplaySequence()
     {
-        if (timer - Time.time > 4.5)
+        if (timer - Time.time > displayTime * (0.95))
         {
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
         }
-
-        else if (timer-Time.time > 4)
+        else if (timer - Time.time > displayTime * (0.8))
         {
             DisplayColour(sequence[0]);
         }
-        else if (timer - Time.time > 3.5)
+        else if (timer - Time.time > displayTime * (0.75))
         {
-            sr.color = Color.white;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
         }
 
-        else if (timer - Time.time > 3)
+        else if (timer - Time.time > displayTime * (0.6))
         {
             DisplayColour(sequence[1]);
         }
-        else if (timer - Time.time > 2.5)
+        else if (timer - Time.time > displayTime * (0.55))
         {
-            sr.color = Color.white;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
         }
 
-        else if (timer - Time.time > 2)
+        else if (timer - Time.time > displayTime * (0.4))
         {
             DisplayColour(sequence[2]);
         }
-        else if (timer - Time.time > 1.5)
+        else if (timer - Time.time > displayTime * (0.35))
         {
-            sr.color = Color.white;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
         }
 
-        else if (timer - Time.time > 1)
+        else if (timer - Time.time > displayTime * (0.2))
         {
             DisplayColour(sequence[3]);
         }
-        else if (timer - Time.time > 0.5)
+        else if (timer - Time.time > displayTime * (0.15))
         {
-            sr.color = Color.white;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
         }
 
         else if (timer - Time.time > 0)
@@ -119,7 +129,8 @@ public class Match : MonoBehaviour
         }
         else
         {
-            sr.color = Color.white;
+            st.color = Color.gray9;
+            sb.color = Color.gray9;
             isDisplayingSequence = false;
         }
     }
@@ -132,43 +143,47 @@ public class Match : MonoBehaviour
             float r = UnityEngine.Random.Range(0.0f, 4.0f);
             if (r <= 0.99f)
             {
-                sequence[i] = KeyCode.UpArrow;
+                sequence[i] = KeyCode.H;
             }
             else if (r <= 1.99f)
             {
-                sequence[i] = KeyCode.LeftArrow;
+                sequence[i] = KeyCode.J;
             }
             else if (r <= 2.99f)
             {
-                sequence[i] = KeyCode.DownArrow;
+                sequence[i] = KeyCode.L;
             }
             else
             {
-                sequence[i] = KeyCode.RightArrow;
+                sequence[i] = KeyCode.K;
             }
         }
     }
 
     void DisplayColour(KeyCode k)
     {
-        if (k == (KeyCode.UpArrow))
+        if (k == (KeyCode.H))
         {
-            sr.color = Color.greenYellow;
+            st.color = Color.greenYellow;
+            sb.color = Color.greenYellow;
         }
 
-        if (k == (KeyCode.LeftArrow))
+        if (k == (KeyCode.J))
         {
-            sr.color = Color.orange;
+            st.color = Color.orange;
+            sb.color = Color.orange;
         }
 
-        if (k == (KeyCode.DownArrow))
+        if (k == (KeyCode.L))
         {
-            sr.color = Color.red;
+            st.color = Color.red;
+            sb.color = Color.red;
         }
 
-        if (k == (KeyCode.RightArrow))
+        if (k == (KeyCode.K))
         {
-            sr.color = Color.yellow;
+            st.color = Color.yellow;
+            sb.color = Color.yellow;
         }
     }
 
@@ -186,7 +201,8 @@ public class Match : MonoBehaviour
             }
             else
             {
-                sr.color = Color.black;
+                st.color = Color.gray2;
+                sb.color = Color.gray2;
                 Debug.Log("LOSE!");
                 inSequence = 0;
             }
