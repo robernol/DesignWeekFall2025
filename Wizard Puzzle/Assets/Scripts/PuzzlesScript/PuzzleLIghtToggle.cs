@@ -1,8 +1,14 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PuzzleLIghtToggle : MonoBehaviour
 {
+    [Header("Puzzle 3 Text References")]
+    public TMP_FontAsset normalFontAsset;
+    public TextMeshProUGUI puzzleNum;
+    public GameObject hint;
+
     [Header("Light References")]
     public GameObject lightOffOverlay;
 
@@ -14,10 +20,25 @@ public class PuzzleLIghtToggle : MonoBehaviour
 
     public static int lightState = 1;
 
+    private void Start()
+    {
+        if(GlobalVariableManager.solvedPuzzle3)
+        {
+            ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 3.ToString());
+        }
+    }
+
     private void Update()
     {
         SwitchLight();
         ToggleLight();
+    }
+
+    private void ShowTranslatedText(TextMeshProUGUI targetText, TMP_FontAsset targetFont, float targetFontSize, string theOutputText)
+    {
+        targetText.font = targetFont;
+        targetText.fontSize = targetFontSize;
+        targetText.text = theOutputText;
     }
 
     #region Light Toggle Logic
