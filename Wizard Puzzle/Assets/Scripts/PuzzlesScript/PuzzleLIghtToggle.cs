@@ -7,7 +7,7 @@ public class PuzzleLIghtToggle : MonoBehaviour
     [Header("Puzzle 3 Text References")]
     public TMP_FontAsset normalFontAsset;
     public TextMeshProUGUI puzzleNum;
-    public GameObject hint;
+    //public GameObject hint;
 
     [Header("Light References")]
     public GameObject lightOffOverlay;
