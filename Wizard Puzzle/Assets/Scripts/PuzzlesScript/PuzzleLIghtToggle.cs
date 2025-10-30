@@ -7,7 +7,7 @@ public class PuzzleLIghtToggle : MonoBehaviour
     [Header("Puzzle 3 Text References")]
     public TMP_FontAsset normalFontAsset;
     public TextMeshProUGUI puzzleNum;
-    public GameObject hint;
+    //public GameObject hint;
 
     [Header("Light References")]
     public GameObject lightOffOverlay;
@@ -22,9 +22,9 @@ public class PuzzleLIghtToggle : MonoBehaviour
 
     private void Start()
     {
-        if(GlobalVariableManager.solvedPuzzle3)
+        if(GlobalVariableManager.solvedPuzzle4)
         {
-            ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 3.ToString());
+            ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 5.ToString());
         }
     }
 

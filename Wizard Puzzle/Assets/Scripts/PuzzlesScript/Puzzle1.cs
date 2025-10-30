@@ -61,9 +61,8 @@ public class Puzzle1 : MonoBehaviour
     {
         if (rune1.font == normalFontAsset && rune2.font == normalFontAsset && rune3.font == normalFontAsset)
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            if (PlayerInput.B2IsPressed)
             {
-                // if player pressed the corect rune button shown on the scren --> PlayerInput.cs
                 GlobalVariableManager.solvedPuzzle1 = true;
                 hint1.SetActive(true);
             }
