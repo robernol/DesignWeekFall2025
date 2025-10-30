@@ -36,11 +36,6 @@ public class GlobalVariableManager : MonoBehaviour
         StartCoroutine(LoseChanceCouroutine());
     }
 
-    private void Update()
-    {
-        
-    }
-
     private IEnumerator LoseChanceCouroutine()
     {
         while (true)
