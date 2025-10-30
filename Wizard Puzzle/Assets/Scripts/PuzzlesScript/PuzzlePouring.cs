@@ -104,9 +104,8 @@ public class PuzzlePouring : MonoBehaviour
         if(targetFill.sprite == fillImages[3].sprite && bottleSlider.value >= bottleSlider.maxValue)
         {
             // Puzzle Solved
-            Debug.Log("Puzzle Solved!");
             GlobalVariableManager.solvedPuzzle3 = true;
-        }
+        }   
         else if(targetFill.sprite != fillImages[3].sprite && bottleSlider.value >= bottleSlider.maxValue)
         {
             bottleSlider.value = bottleSlider.minValue;
