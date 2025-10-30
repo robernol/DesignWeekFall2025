@@ -6,6 +6,7 @@ public class GlobalVariableManager : MonoBehaviour
 
     [Header("Global Variables")]   
     public static bool solvedPuzzle1 { get; set; } = false;
+    public static bool solvedPuzzle2 { get; set; } = false;
 
     private void Awake()
     {

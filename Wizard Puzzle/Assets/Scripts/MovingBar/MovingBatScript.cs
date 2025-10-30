@@ -22,6 +22,8 @@ public class MovingBatScript : MonoBehaviour
     [HideInInspector] public float pointerSpeed;
     private int direction;
 
+    public GameObject hint;
+
 
     private void Start()
     {
@@ -102,11 +104,14 @@ public class MovingBatScript : MonoBehaviour
     {
         Debug.Log("Pointer is in goal!");
         // do stuff if player success
+
+        hint.SetActive(true);
     }
 
     public void OnPointerExitGoal()
     {
         Debug.Log("Pointer is Not in goal!");
         // do stuff if player fails
+
     }
 }

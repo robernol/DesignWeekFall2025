@@ -60,6 +60,7 @@ public class Puzzle1 : MonoBehaviour
     {
         if (rune1.font == normalFontAsset && rune2.font == normalFontAsset && rune3.font == normalFontAsset)
         {
+            
             // tommorow add another if(if player pressed the correct button on the thing
             GlobalVariableManager.solvedPuzzle1 = true;
             Next.SetActive(true);
