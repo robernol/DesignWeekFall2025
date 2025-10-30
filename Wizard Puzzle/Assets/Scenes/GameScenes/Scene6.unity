@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &201482581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -188,6 +188,20 @@ MonoBehaviour:
   normalFontAsset: {fileID: 11400000, guid: 0d8a28dcdbca4dc42b1b48c1dc3aec16, type: 2}
   puzzleNum: {fileID: 704816883}
   instruction: {fileID: 1399971695}
+  hint: {fileID: 201482580}
+  bar: {fileID: 421957947}
+  goalBar: {fileID: 1025371543}
+  maxX: 5
+  minX: -0.076
+  minWid: 0.5
+  maxWid: 1.5
+  pointer: {fileID: 599143943}
+  rightLimit: 5
+  leftLimit: -0.084
+  minSpeed: 2
+  maxSpeed: 8
+  offset: 0.18
+  pointerSpeed: 0
 --- !u!4 &231172799
 Transform:
   m_ObjectHideFlags: 0
@@ -394,7 +408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: K
+  m_text: G
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70391272206163c4b9a38a1bbee0d6f3, type: 2}
   m_sharedMaterial: {fileID: -521909926454561776, guid: 70391272206163c4b9a38a1bbee0d6f3, type: 2}
@@ -501,7 +515,7 @@ Transform:
   m_GameObject: {fileID: 599143943}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 5.08, y: 1.4157813, z: 0}
+  m_LocalPosition: {x: 5.087, y: 1.4157813, z: 0}
   m_LocalScale: {x: 0.3435362, y: 0.35479936, z: 0.40623397}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1008,7 +1022,7 @@ Transform:
   m_GameObject: {fileID: 1025371543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.9753585, y: 1.1644697, z: 0}
+  m_LocalPosition: {x: -0.076, y: 1.1644697, z: 0}
   m_LocalScale: {x: 0.25, y: 0.35479936, z: 0.40623397}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1451,19 +1465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4869c711776af44b686fc93e79b55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingBatScript
-  bar: {fileID: 421957947}
-  goalBar: {fileID: 1025371543}
-  maxX: 5
-  minX: 0.02
-  minWid: 0.25
-  maxWid: 1.5
-  pointer: {fileID: 599143943}
-  rightLimit: 5.08
-  leftLimit: -0.06280879
-  minSpeed: 4
-  maxSpeed: 8
-  pointerSpeed: 0
-  hint: {fileID: 0}
 --- !u!4 &1959415770
 Transform:
   m_ObjectHideFlags: 0
@@ -1588,7 +1589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -57.1}
+  m_AnchoredPosition: {x: 13, y: -55.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009589195
@@ -1611,7 +1612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: q
+  m_text: G
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70391272206163c4b9a38a1bbee0d6f3, type: 2}
   m_sharedMaterial: {fileID: -521909926454561776, guid: 70391272206163c4b9a38a1bbee0d6f3, type: 2}
