@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +15,7 @@ public class GlobalVariableManager : MonoBehaviour
 
     public static bool timeIsDone { get; set; } = false;
 
-    public static int playerFalidedTime { get; set; }
+    [Range(0f,1f)] public static float chanceToLoseGame { get; set; } = 0.0f;
 
 
     private void Awake()
@@ -30,22 +31,43 @@ public class GlobalVariableManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        StartCoroutine(LoseChanceCouroutine());
+    }
+
     private void Update()
     {
-        LoseConsition();
-        Debug.Log(playerFalidedTime);
+        
+    }
+
+    private IEnumerator LoseChanceCouroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3f);
+            LoseConsition();
+        }
     }
 
     private void LoseConsition()
     {
-        if (playerFalidedTime > 2)
+        float escape = Random.value;
+        Debug.Log(escape + " vs " + chanceToLoseGame);
+
+        if (escape < chanceToLoseGame)
         {
-            SceneManager.LoadScene("Lose");
+            GameLose();
         }
         else if (timeIsDone)
         {
-            SceneManager.LoadScene("Lose");
+            GameLose();
         }
+    }
+
+    private void GameLose()
+    {
+        SceneManager.LoadScene("Lose");
     }
 
 }

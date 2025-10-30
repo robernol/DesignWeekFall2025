@@ -28,6 +28,7 @@ public class Puzzle2 : MonoBehaviour
     public float offset;
     [HideInInspector] public float pointerSpeed;
     private int direction;
+    private float oriSpeed;
 
 
     private void Start()
@@ -43,6 +44,7 @@ public class Puzzle2 : MonoBehaviour
 
         GoalBarRandomnizer();
         pointerSpeed = Random.Range(minSpeed, maxSpeed);
+        oriSpeed = pointerSpeed;
         direction = 1;
     }
 
@@ -131,7 +133,7 @@ public class Puzzle2 : MonoBehaviour
 
     public void OnPointerExitGoal()
     {
-        pointerSpeed = Random.Range(minSpeed, maxSpeed);
-        GlobalVariableManager.playerFalidedTime++;
+        pointerSpeed = oriSpeed;
+        GlobalVariableManager.chanceToLoseGame += 0.05f;
     }
 }
