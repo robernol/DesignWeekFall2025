@@ -9,13 +9,13 @@ public class Puzzle1 : MonoBehaviour
     public TextMeshProUGUI rune1;
     public TextMeshProUGUI rune2;
     public TextMeshProUGUI rune3;
-    public GameObject Next;
+    public GameObject hint1;
 
     private float normalFontSize = 8f;
 
     private void Start()
     {
-        Next.SetActive(false);
+        hint1.SetActive(false);
 
         if (GlobalVariableManager.solvedPuzzle1)
         {
@@ -23,6 +23,7 @@ public class Puzzle1 : MonoBehaviour
             ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, 1.ToString());
             ShowTranslatedText(rune2, normalFontAsset, normalFontSize, "sealing");
             ShowTranslatedText(rune3, normalFontAsset, normalFontSize, "button");
+            hint1.SetActive(true);
         }
     }
     private void Update()
@@ -60,11 +61,12 @@ public class Puzzle1 : MonoBehaviour
     {
         if (rune1.font == normalFontAsset && rune2.font == normalFontAsset && rune3.font == normalFontAsset)
         {
-            
-            // tommorow add another if(if player pressed the correct button on the thing
-            GlobalVariableManager.solvedPuzzle1 = true;
-            Next.SetActive(true);
-            Debug.Log("unlock puzzle 2");
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                // if player pressed the corect rune button shown on the scren --> PlayerInput.cs
+                GlobalVariableManager.solvedPuzzle1 = true;
+                hint1.SetActive(true);
+            }
         }
     }
 }
