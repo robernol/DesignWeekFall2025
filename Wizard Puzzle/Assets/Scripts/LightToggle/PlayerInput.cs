@@ -4,19 +4,18 @@ public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput Instance;
 
-    public static bool leftIsPressed { get; private set; }
-    public static bool upIsPressed { get; private set; }
-    public static bool rightIsPressed { get; private set; }
-    public static bool downIsPressed { get; private set; }
-    public static bool firIsPressed { get; private set; }
-    public static bool secIsPressed { get; private set; }
+    public static bool B1IsPressed { get; private set; }
+    public static bool B2IsPressed { get; private set; }
+    public static bool B3IsPressed { get; private set; }
+    public static bool B4IsPressed { get; private set; }
+    public static bool B5IsPressed { get; private set; }
 
-    public static bool leftIsHeld { get; private set; }
-    public static bool upIsHeld { get; private set; }
-    public static bool rightIsHeld { get; private set; }
-    public static bool downIsHeld { get; private set; }
-    public static bool firIsHeld { get; private set; }
-    public static bool secIsHeld { get; private set; }
+    public static bool T1IsHeld { get; private set; }
+    public static bool T2IsHeld { get; private set; }
+
+    public static bool W2IsInserted { get; private set; }
+
+    
 
     private void Awake()
     {
@@ -38,92 +37,68 @@ public class PlayerInput : MonoBehaviour
     private void UpdateInput()
     {
         #region For presseing input
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.H))
         {
-            leftIsPressed = true;
-            Debug.Log("left");  
+            B1IsPressed = true;
+            Debug.Log("h");  
         }
-        else leftIsPressed = false;
+        else B1IsPressed = false;
 
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.J))
         {
-            upIsPressed = true;
-            Debug.Log("up")
+            B2IsPressed = true;
+            Debug.Log("j")
 ;        }
-        else upIsPressed = false;
+        else B2IsPressed = false;
         
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKeyDown(KeyCode.L))
         {
-            rightIsPressed = true;
-            Debug.Log("Right");
+            B3IsPressed = true;
+            Debug.Log("l");
         }
-        else rightIsPressed = false;
+        else B3IsPressed = false;
         
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if(Input.GetKeyDown(KeyCode.K))
         {
-            downIsPressed = true;
-            Debug.Log("down");
+            B4IsPressed = true;
+            Debug.Log("k");
         }
-        else downIsPressed = false;
+        else B4IsPressed = false;
         
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.W))
         {
-            firIsPressed = true;
-            Debug.Log("first");
+            B5IsPressed = true;
+            Debug.Log("w");
         }
-        else firIsPressed = false;
-
-        if(Input.GetMouseButtonDown(1))
-        {
-            secIsPressed = true;
-            Debug.Log("second");
-        }
-        else secIsPressed = false;
+        else B5IsPressed = false;
         #endregion
 
         #region For holding input
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetMouseButton(1))
         {
-            leftIsHeld = true;
-            Debug.Log("left");
+            T1IsHeld = true;
+            Debug.Log("click");
         }
-        else leftIsHeld = false;
-
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            upIsHeld = true;
-            Debug.Log("up")
-;
-        }
-        else upIsHeld = false;
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rightIsHeld = true;
-            Debug.Log("Right");
-        }
-        else rightIsHeld = false;
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            downIsHeld = true;
-            Debug.Log("down");
-        }
-        else downIsHeld = false;
+        else T1IsHeld = false;
 
         if (Input.GetKey(KeyCode.Space))
         {
-            firIsHeld = true;
-            Debug.Log("first");
+            T2IsHeld = true;
+            Debug.Log("space");
         }
-        else firIsHeld = false;
+        else T2IsHeld = false;
+        #endregion
 
-        if (Input.GetMouseButton(1))
+        #region For Wire
+        if (Input.GetKey(KeyCode.A))
         {
-            secIsHeld = true;
-            Debug.Log("second");
+            W2IsInserted = true;
+            Debug.Log("a");
         }
-        else secIsHeld = false;
+        else
+        {
+            W2IsInserted = false;
+        }
         #endregion
     }
 }

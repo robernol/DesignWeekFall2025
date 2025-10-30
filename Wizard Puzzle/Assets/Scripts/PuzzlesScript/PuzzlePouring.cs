@@ -57,14 +57,11 @@ public class PuzzlePouring : MonoBehaviour
 
     private void Pouring()
     {
-        
-            if (isPouring)
-            {
-                targetFill.sprite = pickedFill;
-                bottleSlider.value += pouringSpeed * Time.deltaTime;
-            }
-        
-        
+        if (isPouring)
+        {
+            targetFill.sprite = pickedFill;
+            bottleSlider.value += pouringSpeed * Time.deltaTime;
+        }
     }
     private void PlayerPouringInput()
     {

@@ -34,9 +34,9 @@ public class LigthToggle : MonoBehaviour
     private void SwitchLight()
     {
         // change this into PlayerInput.fithButtonIsPressed if using the PlayerInput script
-        if (PlayerInput.leftIsPressed)
-        {
-            lightOn = !lightOn;        
-        }
+        //if (PlayerInput.leftIsPressed)
+        //{
+        //    lightOn = !lightOn;        
+        //}
     }
 }
