@@ -31,7 +31,7 @@ public class Pentagram : MonoBehaviour
     void Update()
     {   if (!completed)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.H))
             {
                 if (lastSelected == null)
                 {
@@ -52,7 +52,7 @@ public class Pentagram : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 if (lastSelected == null)
                 {
@@ -73,7 +73,7 @@ public class Pentagram : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 if (lastSelected == null)
                 {
@@ -94,7 +94,7 @@ public class Pentagram : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.K))
             {
                 if (lastSelected == null)
                 {
@@ -115,7 +115,7 @@ public class Pentagram : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 if (lastSelected == null)
                 {

@@ -6,8 +6,8 @@ using UnityEngine;
 public class Match : MonoBehaviour
 {
     public SpriteRenderer st, sb;
-    public float timer, displayTime;
-    bool isDisplayingSequence;
+    public float timer, displayTime, endTime;
+    bool isDisplayingSequence, completed;
     KeyCode[] sequence;
     public int inSequence;
 
@@ -18,6 +18,7 @@ public class Match : MonoBehaviour
         SequenceRandomizer();
         inSequence = 0;
         displayTime = 5;
+        completed = false;
     }
 
     void Update()
@@ -42,8 +43,8 @@ public class Match : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.L))
             {
-                st.color = Color.red;
-                sb.color = Color.red;
+                st.color = Color.softRed;
+                sb.color = Color.softRed;
                 timer = Time.time + 0.5f;
                 CheckCorrectInput(KeyCode.L);
             }
@@ -60,9 +61,14 @@ public class Match : MonoBehaviour
             {
                 st.color = Color.gray9;
                 sb.color = Color.gray9;
+                if (completed)
+                {
+                    st.color = Color.mediumPurple;
+                    sb.color = Color.mediumPurple;
+                }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if ((Input.GetKeyDown(KeyCode.Space)) && !completed)
             {
                 timer = Time.time + displayTime;
                 SequenceRandomizer();
@@ -129,8 +135,8 @@ public class Match : MonoBehaviour
         }
         else
         {
-            st.color = Color.gray9;
-            sb.color = Color.gray9;
+            st.color = Color.mediumPurple;
+            sb.color = Color.mediumPurple;
             isDisplayingSequence = false;
         }
     }
@@ -164,26 +170,26 @@ public class Match : MonoBehaviour
     {
         if (k == (KeyCode.H))
         {
-            st.color = Color.greenYellow;
-            sb.color = Color.greenYellow;
+            st.color = Color.deepSkyBlue;
+            sb.color = Color.cornflowerBlue;
         }
 
         if (k == (KeyCode.J))
         {
-            st.color = Color.orange;
-            sb.color = Color.orange;
+            st.color = Color.springGreen;
+            sb.color = Color.mediumSeaGreen;
         }
 
         if (k == (KeyCode.L))
         {
-            st.color = Color.red;
-            sb.color = Color.red;
+            st.color = Color.softRed;
+            sb.color = Color.softRed;
         }
 
         if (k == (KeyCode.K))
         {
             st.color = Color.yellow;
-            sb.color = Color.yellow;
+            sb.color = Color.goldenRod;
         }
     }
 
@@ -196,7 +202,10 @@ public class Match : MonoBehaviour
                 inSequence++;
                 if (inSequence > 4)
                 {
-                    Debug.Log("WIN!");
+                    completed = true;
+                    Debug.Log("WIN!" + completed);
+                    st.color = Color.mediumPurple;
+                    sb.color = Color.mediumPurple;
                 }
             }
             else
