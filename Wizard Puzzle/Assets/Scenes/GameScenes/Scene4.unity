@@ -1498,6 +1498,7 @@ MonoBehaviour:
   - {fileID: 1922834063}
   - {fileID: 52800786}
   - {fileID: 1567709305}
+  whiteFill: {fileID: 6004977875829265198, guid: ce817793423d29a43b9c77ff5a1707b1, type: 3}
 --- !u!4 &2092350323
 Transform:
   m_ObjectHideFlags: 0

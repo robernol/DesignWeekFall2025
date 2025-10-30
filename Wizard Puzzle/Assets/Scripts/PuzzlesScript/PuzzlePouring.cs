@@ -20,6 +20,7 @@ public class PuzzlePouring : MonoBehaviour
 
     [Header("Puzzle Setting")]
     public List<Image> fillImages = new List<Image>();
+    public Sprite whiteFill;
 
     private void Start()
     {
@@ -42,30 +43,33 @@ public class PuzzlePouring : MonoBehaviour
     #region Filler logic
     private void PickFiller()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (!hasPickedFill)
         {
-            pickedFill = fillImages[0].sprite;
-            hasPickedFill = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            pickedFill = fillImages[1].sprite;
-            hasPickedFill = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            pickedFill = fillImages[2].sprite;
-            hasPickedFill = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            pickedFill = fillImages[3].sprite;
-            hasPickedFill = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            pickedFill = fillImages[4].sprite;
-            hasPickedFill = true;
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                pickedFill = fillImages[0].sprite;
+                hasPickedFill = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                pickedFill = fillImages[1].sprite;
+                hasPickedFill = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                pickedFill = fillImages[2].sprite;
+                hasPickedFill = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                pickedFill = fillImages[3].sprite;
+                hasPickedFill = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                pickedFill = fillImages[4].sprite;
+                hasPickedFill = true;
+            }
         }
     }
 
@@ -97,11 +101,18 @@ public class PuzzlePouring : MonoBehaviour
 
     private void PouringPuzzle()
     {
-        if(targetFill.sprite == fillImages[4].sprite && bottleSlider.value >= bottleSlider.maxValue)
+        if(targetFill.sprite == fillImages[3].sprite && bottleSlider.value >= bottleSlider.maxValue)
         {
             // Puzzle Solved
             Debug.Log("Puzzle Solved!");
             GlobalVariableManager.solvedPuzzle3 = true;
+        }
+        else if(targetFill.sprite != fillImages[3].sprite && bottleSlider.value >= bottleSlider.maxValue)
+        {
+            bottleSlider.value = bottleSlider.minValue;
+            targetFill.sprite = whiteFill;
+            hasPickedFill = false;
+            GlobalVariableManager.chanceToLoseGame += 0.05f;
         }
     }
 
