@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class Pentagram : MonoBehaviour
 {
     GameObject[] lineDrawer;
-    public GameObject p1, p2, p3, p4, p5, lineDraw;
+    public GameObject p1, p2, p3, p4, p5, lineDraw, baphomet;
     GameObject lastSelected;
     Vector3[] start, end;
     public int lines;
-    bool l1, l2, l3, l4, l5;
+    bool l1, l2, l3, l4, l5, completed;
     void Start()
     {
         start = new Vector3[5];
@@ -23,113 +24,116 @@ public class Pentagram : MonoBehaviour
         l3 = false;
         l4 = false;
         l5 = false;
+        completed = false;
         
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
+    {   if (!completed)
         {
-            if (lastSelected == null)
+            if (Input.GetKeyDown(KeyCode.W))
             {
-                lastSelected = p1;
-            }
-            else if (lastSelected == p1)
-            {
-                lastSelected = null;
-            }
-            else
-            {
-                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+                if (lastSelected == null)
+                {
+                    lastSelected = p1;
+                }
+                else if (lastSelected == p1)
+                {
+                    lastSelected = null;
+                }
+                else
+                {
+                    lineDrawer[lines] = Instantiate(lineDraw, this.transform);
 
-                start[lines] = lastSelected.transform.position;
-                end[lines] = p1.transform.position;
-                lastSelected = null;
-                lines++;
-            }    
-        }
+                    start[lines] = lastSelected.transform.position;
+                    end[lines] = p1.transform.position;
+                    lastSelected = null;
+                    lines++;
+                }
+            }
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            if (lastSelected == null)
+            if (Input.GetKeyDown(KeyCode.A))
             {
-                lastSelected = p2;
-            }
-            else if (lastSelected == p2)
-            {
-                lastSelected = null;
-            }
-            else
-            {
-                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+                if (lastSelected == null)
+                {
+                    lastSelected = p2;
+                }
+                else if (lastSelected == p2)
+                {
+                    lastSelected = null;
+                }
+                else
+                {
+                    lineDrawer[lines] = Instantiate(lineDraw, this.transform);
 
-                start[lines] = lastSelected.transform.position;
-                end[lines] = p2.transform.position;
-                lastSelected = null;
-                lines++;
+                    start[lines] = lastSelected.transform.position;
+                    end[lines] = p2.transform.position;
+                    lastSelected = null;
+                    lines++;
+                }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            if (lastSelected == null)
+            if (Input.GetKeyDown(KeyCode.D))
             {
-                lastSelected = p3;
-            }
-            else if (lastSelected == p3)
-            {
-                lastSelected = null;
-            }
-            else
-            {
-                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+                if (lastSelected == null)
+                {
+                    lastSelected = p3;
+                }
+                else if (lastSelected == p3)
+                {
+                    lastSelected = null;
+                }
+                else
+                {
+                    lineDrawer[lines] = Instantiate(lineDraw, this.transform);
 
-                start[lines] = lastSelected.transform.position;
-                end[lines] = p3.transform.position;
-                lastSelected = null;
-                lines++;
+                    start[lines] = lastSelected.transform.position;
+                    end[lines] = p3.transform.position;
+                    lastSelected = null;
+                    lines++;
+                }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (lastSelected == null)
+            if (Input.GetKeyDown(KeyCode.Z))
             {
-                lastSelected = p4;
-            }
-            else if (lastSelected == p4)
-            {
-                lastSelected = null;
-            }
-            else
-            {
-                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+                if (lastSelected == null)
+                {
+                    lastSelected = p4;
+                }
+                else if (lastSelected == p4)
+                {
+                    lastSelected = null;
+                }
+                else
+                {
+                    lineDrawer[lines] = Instantiate(lineDraw, this.transform);
 
-                start[lines] = lastSelected.transform.position;
-                end[lines] = p4.transform.position;
-                lastSelected = null;
-                lines++;
+                    start[lines] = lastSelected.transform.position;
+                    end[lines] = p4.transform.position;
+                    lastSelected = null;
+                    lines++;
+                }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            if (lastSelected == null)
+            if (Input.GetKeyDown(KeyCode.X))
             {
-                lastSelected = p5;
-            }
-            else if (lastSelected == p5)
-            {
-                lastSelected = null;
-            }
-            else
-            {
-                lineDrawer[lines] = Instantiate(lineDraw, this.transform);
+                if (lastSelected == null)
+                {
+                    lastSelected = p5;
+                }
+                else if (lastSelected == p5)
+                {
+                    lastSelected = null;
+                }
+                else
+                {
+                    lineDrawer[lines] = Instantiate(lineDraw, this.transform);
 
-                start[lines] = lastSelected.transform.position;
-                end[lines] = p5.transform.position;
-                lastSelected = null;
-                lines++;
+                    start[lines] = lastSelected.transform.position;
+                    end[lines] = p5.transform.position;
+                    lastSelected = null;
+                    lines++;
+                }
             }
         }
 
@@ -172,9 +176,37 @@ public class Pentagram : MonoBehaviour
                     l5 = true;
                 }
             }
-            if (l1 && l2 &&  l3 && l4 && l5)
+            if (l1 && l2 &&  l3 && l4 && l5 && !completed)
             {
                 Debug.Log("WIN");
+                p1.GetComponent<Animator>().enabled = true;
+                p1.GetComponent<SpriteRenderer>().color = Color.white;
+                p1.transform.position = new Vector3(p1.transform.position.x, p1.transform.position.y + 0.1f, p1.transform.position.z);
+
+                p2.GetComponent<Animator>().enabled = true;
+                p2.GetComponent<SpriteRenderer>().color = Color.white;
+                p2.transform.position = new Vector3(p2.transform.position.x, p2.transform.position.y + 0.1f, p2.transform.position.z);
+
+                p3.GetComponent<Animator>().enabled = true;
+                p3.GetComponent<SpriteRenderer>().color = Color.white;
+                p3.transform.position = new Vector3(p3.transform.position.x, p3.transform.position.y + 0.1f, p3.transform.position.z);
+
+                p4.GetComponent<Animator>().enabled = true;
+                p4.GetComponent<SpriteRenderer>().color = Color.white;
+                p4.transform.position = new Vector3(p4.transform.position.x, p4.transform.position.y + 0.1f, p4.transform.position.z);
+
+                p5.GetComponent<Animator>().enabled = true;
+                p5.GetComponent<SpriteRenderer>().color = Color.white;
+                p5.transform.position = new Vector3(p5.transform.position.x, p5.transform.position.y + 0.1f, p5.transform.position.z);
+
+                baphomet.GetComponent<SpriteRenderer>().enabled = true;
+
+                completed = true;
+
+            }
+            else if (completed == true)
+            {
+
             }
             else
             {

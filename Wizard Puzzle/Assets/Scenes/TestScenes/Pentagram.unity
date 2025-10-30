@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &762836375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5681784603294021996, guid: 9d7b3d9591e57324d951ed900936131d, type: 3}
+  m_PrefabInstance: {fileID: 3151332417485609405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1723916169
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,9 +322,17 @@ PrefabInstance:
       value: PentagonPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 7554669401254907081, guid: 9d7b3d9591e57324d951ed900936131d, type: 3}
+      propertyPath: baphomet
+      value: 
+      objectReference: {fileID: 762836375}
+    - target: {fileID: 7554669401254907081, guid: 9d7b3d9591e57324d951ed900936131d, type: 3}
       propertyPath: lineDraw
       value: 
       objectReference: {fileID: 1632532798101306953, guid: be6b15aab213267438e30a14d16500c5, type: 3}
+    - target: {fileID: 7708820074074076382, guid: 9d7b3d9591e57324d951ed900936131d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.50980395
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
