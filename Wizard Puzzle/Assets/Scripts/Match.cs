@@ -21,6 +21,10 @@ public class Match : MonoBehaviour
         inSequence = 0;
         displayTime = 5;
         completed = false;
+        if (GlobalVariableManager.solvedPuzzle2 == true)
+        {
+            completed = true;
+        }
     }
 
     void Update()
