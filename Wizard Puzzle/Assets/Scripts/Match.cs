@@ -31,16 +31,16 @@ public class Match : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.H))
             {
-                st.color = Color.greenYellow;
-                sb.color = Color.greenYellow;
+                st.color = Color.deepSkyBlue;
+                sb.color = Color.deepSkyBlue;
                 timer = Time.time + 0.5f;
                 CheckCorrectInput(KeyCode.H);
             }
 
             if (Input.GetKeyDown(KeyCode.J))
             {
-                st.color = Color.orange;
-                sb.color = Color.orange;
+                st.color = Color.springGreen;
+                sb.color = Color.springGreen;
                 timer = Time.time + 0.5f;
                 CheckCorrectInput(KeyCode.J);
             }
@@ -207,7 +207,6 @@ public class Match : MonoBehaviour
                 if (inSequence > 4)
                 {
                     completed = true;
-                    Debug.Log("WIN!" + completed);
                     st.color = Color.mediumPurple;
                     sb.color = Color.mediumPurple;
                     GlobalVariableManager.solvedPuzzle2 = true;
