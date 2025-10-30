@@ -7,6 +7,10 @@ public class MovingBatScript : MonoBehaviour
 
     [Header("Goal References")]
     public GameObject goalBar;
+    public float maxX;
+    public float minX;
+    public float minWid;
+    public float maxWid;
     private Vector2 goalPos;
 
     [Header("Pointer")]
@@ -44,11 +48,18 @@ public class MovingBatScript : MonoBehaviour
 
     private void GoalBarRandomnizer()
     {
-        float randomX = Random.Range(-5.11f, 5.13f);
-        float randomWidth = Random.Range(1.0f, 4f);
-        goalPos = new Vector2(randomX, goalBar.transform.position.y);
+        float randomWidth = Random.Range(minWid, maxWid);
+
+        // Compute the half-width (since position is at the center)
+        float halfWidth = randomWidth / 2f;
+
+        // Pick a random center position that keeps both edges within minX and maxX
+        float randomX = Random.Range(minX + halfWidth, maxX - halfWidth);
+
+        // Apply the new position and scale
         goalBar.transform.localScale = new Vector2(randomWidth, goalBar.transform.localScale.y);
-        goalBar.transform.position = goalPos;
+        goalBar.transform.position = new Vector2(randomX, goalBar.transform.position.y);
+        //goalBar.transform.position = goalPos;
     }
     private void PointerMovement()
     {
