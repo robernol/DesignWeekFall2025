@@ -144,7 +144,6 @@ public class Pentagram : MonoBehaviour
 
         for (int i = 0; i < lines; i++)
         {
-            Debug.DrawLine(start[i], end[i], Color.red);
             lineDrawer[i].GetComponent<PentagramLines>().CreateLine(start[i], end[i]);
         }
 
@@ -198,3 +197,4 @@ public class Pentagram : MonoBehaviour
         }
     }
 }
+

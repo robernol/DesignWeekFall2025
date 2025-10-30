@@ -2,11 +2,7 @@ using UnityEngine;
 
 public class PentagramLines : MonoBehaviour
 {
-    LineRenderer lr;
-    void Start()
-    {
-        lr = GetComponent<LineRenderer>();
-    }
+    public LineRenderer lr;
 
     public void CreateLine(Vector3 start, Vector3 end)
     {
