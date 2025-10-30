@@ -32,6 +32,7 @@ public class PuzzleLIghtToggle : MonoBehaviour
     {
         SwitchLight();
         ToggleLight();
+        UpdateHiddenObjects();
     }
 
     private void ShowTranslatedText(TextMeshProUGUI targetText, TMP_FontAsset targetFont, float targetFontSize, string theOutputText)
