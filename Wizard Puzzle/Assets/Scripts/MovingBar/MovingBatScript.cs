@@ -39,6 +39,7 @@ public class MovingBatScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             pointerSpeed = 0;
+            hint.SetActive(true);
             EvaluatePointerStopBounds();
         }
 
@@ -105,7 +106,7 @@ public class MovingBatScript : MonoBehaviour
         Debug.Log("Pointer is in goal!");
         // do stuff if player success
 
-        hint.SetActive(true);
+        
     }
 
     public void OnPointerExitGoal()
