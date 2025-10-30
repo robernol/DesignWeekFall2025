@@ -24,7 +24,7 @@ public class PuzzleLIghtToggle : MonoBehaviour
     {
         if(GlobalVariableManager.solvedPuzzle4)
         {
-            ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 3.ToString());
+            ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 5.ToString());
         }
     }
 
