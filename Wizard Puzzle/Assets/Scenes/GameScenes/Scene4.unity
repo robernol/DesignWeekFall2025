@@ -567,9 +567,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadPuzzleScene
       objectReference: {fileID: 0}
+    - target: {fileID: 5279514376900883683, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
+      propertyPath: m_text
+      value: R
+      objectReference: {fileID: 0}
     - target: {fileID: 5287153457862270192, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
       propertyPath: m_text
-      value: Puzzle 4
+      value: Step
       objectReference: {fileID: 0}
     - target: {fileID: 5613493181150109875, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
       propertyPath: m_Camera
