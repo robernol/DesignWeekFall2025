@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Match : MonoBehaviour
 {
+    
+
     public SpriteRenderer st, sb;
     public float timer, displayTime, endTime;
     bool isDisplayingSequence, completed;
@@ -23,6 +25,8 @@ public class Match : MonoBehaviour
 
     void Update()
     {
+        
+
         if (!isDisplayingSequence)
         {
             if (Input.GetKeyDown(KeyCode.H))
@@ -171,13 +175,13 @@ public class Match : MonoBehaviour
         if (k == (KeyCode.H))
         {
             st.color = Color.deepSkyBlue;
-            sb.color = Color.cornflowerBlue;
+            sb.color = Color.deepSkyBlue;
         }
 
         if (k == (KeyCode.J))
         {
             st.color = Color.springGreen;
-            sb.color = Color.mediumSeaGreen;
+            sb.color = Color.springGreen;
         }
 
         if (k == (KeyCode.L))
@@ -189,7 +193,7 @@ public class Match : MonoBehaviour
         if (k == (KeyCode.K))
         {
             st.color = Color.yellow;
-            sb.color = Color.goldenRod;
+            sb.color = Color.yellow;
         }
     }
 
@@ -206,6 +210,7 @@ public class Match : MonoBehaviour
                     Debug.Log("WIN!" + completed);
                     st.color = Color.mediumPurple;
                     sb.color = Color.mediumPurple;
+                    GlobalVariableManager.solvedPuzzle2 = true;
                 }
             }
             else

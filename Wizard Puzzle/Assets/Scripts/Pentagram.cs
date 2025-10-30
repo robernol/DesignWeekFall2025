@@ -206,7 +206,7 @@ public class Pentagram : MonoBehaviour
             }
             else if (completed == true)
             {
-
+                GlobalVariableManager.solvedPuzzle5 = true;
             }
             else
             {
