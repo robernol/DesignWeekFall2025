@@ -557,6 +557,7 @@ MonoBehaviour:
   rune1: {fileID: 560967811}
   rune2: {fileID: 82353566}
   rune3: {fileID: 1857444311}
+  Next: {fileID: 263884018}
 --- !u!4 &128411844
 Transform:
   m_ObjectHideFlags: 0
@@ -2597,6 +2598,10 @@ PrefabInstance:
       propertyPath: m_margin.w
       value: 48.15767
       objectReference: {fileID: 0}
+    - target: {fileID: 5613493181150109875, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1650858346}
     - target: {fileID: 6009273652440921711, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

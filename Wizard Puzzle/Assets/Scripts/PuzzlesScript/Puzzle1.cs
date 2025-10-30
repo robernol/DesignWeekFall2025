@@ -11,11 +11,19 @@ public class Puzzle1 : MonoBehaviour
     public TextMeshProUGUI rune3;
     public GameObject Next;
 
-    private int normalFontSize = 8;
+    private float normalFontSize = 8f;
 
     private void Start()
     {
         Next.SetActive(false);
+
+        if (GlobalVariableManager.solvedPuzzle1)
+        {
+            // Already solved before
+            ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, 1.ToString());
+            ShowTranslatedText(rune2, normalFontAsset, normalFontSize, "sealing");
+            ShowTranslatedText(rune3, normalFontAsset, normalFontSize, "button");
+        }
     }
     private void Update()
     {
@@ -28,24 +36,26 @@ public class Puzzle1 : MonoBehaviour
         if (BarcodeTest.currentCode.Trim() == "Sip")
         {
             string outPutText = 1.ToString();
-            rune1.font = normalFontAsset;
-            rune1.text = outPutText;
+            ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, outPutText);
         } else if (BarcodeTest.currentCode.Trim() == "Num")
         {
             string outPutText = "sealing";
-            rune2.font = normalFontAsset;
-            rune2.fontSize = normalFontSize;
-            rune2.text = outPutText;
+            ShowTranslatedText(rune2, normalFontAsset, normalFontSize, outPutText);
         } else if (BarcodeTest.currentCode.Trim() == "Lob")
         {
             string outPutText = "button";
-            rune3.font = normalFontAsset;
-            rune3.fontSize = normalFontSize;
-            rune3.text = outPutText;
+            ShowTranslatedText(rune3, normalFontAsset, normalFontSize, outPutText);
         }
     }
 
-    // im just gonna do a quick puzzle 1 state check here, might move it somewhere else later
+    private void ShowTranslatedText(TextMeshProUGUI targetText, TMP_FontAsset targetFont, float targetFontSize, string theOutputText)
+    {
+        targetText.font = targetFont;
+        targetText.fontSize = targetFontSize;
+        targetText.text = theOutputText;
+    }
+
+   
     private void CheckPuzzle1State()
     {
         if (rune1.font == normalFontAsset && rune2.font == normalFontAsset && rune3.font == normalFontAsset)
