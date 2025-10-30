@@ -150,6 +150,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &305093360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5279514376900883683, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
+  m_PrefabInstance: {fileID: 1686935493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &590472562
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +194,52 @@ Transform:
   - {fileID: 770495773}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &654367411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 654367412}
+  - component: {fileID: 654367413}
+  m_Layer: 0
+  m_Name: PuzzleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &654367412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654367411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.63149, y: 1.50255, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654367413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654367411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5a076f6fa838441a911a45049231d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleMatchingColour
+  normalFontAsset: {fileID: 11400000, guid: 0d8a28dcdbca4dc42b1b48c1dc3aec16, type: 2}
+  puzzleNum: {fileID: 305093360}
 --- !u!1 &770495772
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5287153457862270192, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
       propertyPath: m_text
-      value: Puzzle 2
+      value: Step
       objectReference: {fileID: 0}
     - target: {fileID: 5613493181150109875, guid: 530dbda5b99eddc49bc4a91f0c260189, type: 3}
       propertyPath: m_Camera
@@ -768,6 +825,7 @@ SceneRoots:
   - {fileID: 142452117}
   - {fileID: 821327831}
   - {fileID: 1567827600}
+  - {fileID: 654367412}
   - {fileID: 1180483682}
   - {fileID: 1686935493}
   - {fileID: 841973120}
