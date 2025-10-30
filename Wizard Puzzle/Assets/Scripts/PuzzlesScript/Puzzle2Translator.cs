@@ -22,7 +22,7 @@ public class Puzzle2Translator : MonoBehaviour
         if (GlobalVariableManager.solvedPuzzle1)
         {
             // Already solved before
-            ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, 2.ToString());
+            //ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, 2.ToString());
             ShowTranslatedText(rune2, normalFontAsset, normalFontSize, "Use");
             ShowTranslatedText(rune3, normalFontAsset, normalFontSize, "stop");
             ShowTranslatedText(rune4, normalFontAsset, normalFontSize, "stone.");
@@ -41,15 +41,16 @@ public class Puzzle2Translator : MonoBehaviour
 
         if (BarcodeTest.currentCode.Trim() == "Sip")
         {
-            string outPutText =2.ToString();
-            ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, outPutText);
+            string outPutText2 = "stop";
+            ShowTranslatedText(rune3, normalFontAsset, normalFontSize, outPutText2);
+            //string outPutText =2.ToString();
+            // ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, outPutText);
         }
         else if (BarcodeTest.currentCode.Trim() == "Num")
         {
             string outPutText = "Use";
             ShowTranslatedText(rune2, normalFontAsset, normalFontSize, outPutText);
-            string outPutText2 = "stop";
-            ShowTranslatedText(rune3, normalFontAsset, normalFontSize, outPutText2);
+
         }
         else if (BarcodeTest.currentCode.Trim() == "Lob")
         {
