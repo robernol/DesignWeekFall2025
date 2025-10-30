@@ -22,7 +22,7 @@ public class PuzzleLIghtToggle : MonoBehaviour
 
     private void Start()
     {
-        if(GlobalVariableManager.solvedPuzzle3)
+        if(GlobalVariableManager.solvedPuzzle4)
         {
             ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 3.ToString());
         }
