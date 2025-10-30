@@ -38,13 +38,13 @@ public class SceneChangeTesting : MonoBehaviour
             {
                 LoadPuzzleScene("Scene4");
             }
-            else if(PlayerInput.B5IsPressed)
+            else if(Input.GetKeyDown(KeyCode.Q))
             {
-                LoadPuzzleScene("Scene5");
+                LoadPuzzleScene("Scene6");
             }
             else if(GlobalVariableManager.solvedPuzzle5)
             {
-                LoadPuzzleScene("Scene6");
+                LoadPuzzleScene("Scene5");
             }
         }
     }
