@@ -30,10 +30,10 @@ public class SceneChangeTesting : MonoBehaviour
             {
                 LoadPuzzleScene("Scene2");
             }
-            else if (PlayerInput.B3IsPressed)
-            {
-                LoadPuzzleScene("Scene3");
-            }
+            //else if (PlayerInput.B3IsPressed)
+            //{
+            //    LoadPuzzleScene("Scene3");
+            //}
             else if (PlayerInput.B1IsPressed)
             {
                 LoadPuzzleScene("Scene4");
@@ -42,7 +42,7 @@ public class SceneChangeTesting : MonoBehaviour
             {
                 LoadPuzzleScene("Scene6");
             }
-            else if (GlobalVariableManager.solvedPuzzle5)
+            else if (GlobalVariableManager.solvedPuzzle4)
             {
                 LoadPuzzleScene("Scene5");
             }
