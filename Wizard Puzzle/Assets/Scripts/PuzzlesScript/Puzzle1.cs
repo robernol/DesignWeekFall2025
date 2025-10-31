@@ -65,8 +65,7 @@ public class Puzzle1 : MonoBehaviour
     {
         if (sipScanned && numScanned && lobScanned)
         {  
-            // PlayerInput.B2
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (PlayerInput.B2IsPressed)
             {
                 GlobalVariableManager.solvedPuzzle1 = true;
                 hint1.SetActive(true);

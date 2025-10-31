@@ -59,11 +59,12 @@ public class PuzzleLIghtToggle : MonoBehaviour
 
     private void SwitchLight()
     {
-        // change this into PlayerInput.cs later
-        if (Input.GetKeyDown(KeyCode.W))
+        if(GlobalVariableManager.solvedPuzzle4)
         {
-            //Playeinput.B5
-            lightOn = !lightOn;
+            if (PlayerInput.B5IsPressed)
+            {
+                lightOn = !lightOn;
+            }
         }
     }
     #endregion

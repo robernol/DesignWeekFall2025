@@ -32,7 +32,7 @@ public class Pentagram : MonoBehaviour
     }
 
     void Update()
-    {   if (!completed)
+    {   if (!completed && GlobalVariableManager.solvedPuzzle4)
         {
             if (Input.GetKeyDown(KeyCode.H))
             {

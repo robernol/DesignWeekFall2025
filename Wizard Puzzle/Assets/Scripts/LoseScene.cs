@@ -28,9 +28,8 @@ public class LoseScene : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (PlayerInput.B5IsPressed)
         {
-            // Playerinput.B4
             RestartGameButton();
         }
     }

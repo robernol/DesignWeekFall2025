@@ -96,7 +96,7 @@ public class PlayerInput : MonoBehaviour
         #endregion
 
         #region For Wire
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             W2IsInserted = true;
             Debug.Log("a");

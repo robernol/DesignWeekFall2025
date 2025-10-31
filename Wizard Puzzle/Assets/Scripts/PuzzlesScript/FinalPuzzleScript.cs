@@ -7,17 +7,22 @@ public class FinalPuzzleScript : MonoBehaviour
     public TMP_FontAsset normalFontAsset;
     public TextMeshProUGUI puzzleNum;
 
+    public GameObject hint;
+
     private void Start()
     {
+        hint.SetActive(false);
+
         if (GlobalVariableManager.solvedPuzzle5)
         {
+            hint.SetActive(true);
             ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 6.ToString());
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (PlayerInput.W2IsInserted)
         {
             SceneManager.LoadScene(6);
             Debug.Log("key down");
@@ -29,5 +34,4 @@ public class FinalPuzzleScript : MonoBehaviour
         targetText.fontSize = targetFontSize;
         targetText.text = theOutputText;
     }
-
 }
