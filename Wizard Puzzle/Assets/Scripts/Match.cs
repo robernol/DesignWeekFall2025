@@ -49,20 +49,20 @@ public class Match : MonoBehaviour
                 CheckCorrectInput(KeyCode.J);
             }
 
-            if (Input.GetKeyDown(KeyCode.L))
+            if (Input.GetKeyDown(KeyCode.K))
             {
                 st.color = Color.softRed;
                 sb.color = Color.softRed;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.L);
+                CheckCorrectInput(KeyCode.K);
             }
 
-            if (Input.GetKeyDown(KeyCode.K))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 st.color = Color.yellow;
                 sb.color = Color.yellow;
                 timer = Time.time + 0.5f;
-                CheckCorrectInput(KeyCode.K);
+                CheckCorrectInput(KeyCode.L);
             }
 
             if (Time.time > timer)
@@ -165,11 +165,11 @@ public class Match : MonoBehaviour
             }
             else if (r <= 2.99f)
             {
-                sequence[i] = KeyCode.L;
+                sequence[i] = KeyCode.K;
             }
             else
             {
-                sequence[i] = KeyCode.K;
+                sequence[i] = KeyCode.L;
             }
         }
     }
@@ -188,13 +188,13 @@ public class Match : MonoBehaviour
             sb.color = Color.springGreen;
         }
 
-        if (k == (KeyCode.L))
+        if (k == (KeyCode.K))
         {
             st.color = Color.softRed;
             sb.color = Color.softRed;
         }
 
-        if (k == (KeyCode.K))
+        if (k == (KeyCode.L))
         {
             st.color = Color.yellow;
             sb.color = Color.yellow;
