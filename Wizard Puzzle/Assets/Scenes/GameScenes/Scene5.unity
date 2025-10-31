@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FinalPuzzleScript
   normalFontAsset: {fileID: 11400000, guid: 0d8a28dcdbca4dc42b1b48c1dc3aec16, type: 2}
   puzzleNum: {fileID: 2016004463}
-  hint: {fileID: 0}
+  hint: {fileID: 1309969568}
 --- !u!1 &1336595739
 GameObject:
   m_ObjectHideFlags: 0
