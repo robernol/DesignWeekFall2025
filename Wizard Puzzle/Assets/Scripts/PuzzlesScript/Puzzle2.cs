@@ -33,7 +33,7 @@ public class Puzzle2 : MonoBehaviour
 
     private void Start()
     {
-        instruction.SetActive(false);
+        
         hint.SetActive(false);
 
         if (GlobalVariableManager.solvedPuzzle1)

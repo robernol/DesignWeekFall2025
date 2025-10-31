@@ -48,7 +48,7 @@ public class GlobalVariableManager : MonoBehaviour
     private void LoseConsition()
     {
         float escape = Random.Range(0.3f, 1.0f);    
-        Debug.Log(escape + " vs " + chanceToLoseGame);
+     //   Debug.Log(escape + " vs " + chanceToLoseGame);
 
         if (escape < chanceToLoseGame)
         {

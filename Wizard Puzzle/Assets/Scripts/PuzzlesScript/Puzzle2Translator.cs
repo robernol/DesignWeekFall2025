@@ -10,9 +10,10 @@ public class Puzzle2Translator : MonoBehaviour
     public TextMeshProUGUI rune3;
     public TextMeshProUGUI rune4;
     public TextMeshProUGUI titleRune;
+    public GameObject hint1;
 
 
-    
+
 
     private float normalFontSize = 8f;
 
@@ -23,7 +24,7 @@ public class Puzzle2Translator : MonoBehaviour
         if (GlobalVariableManager.solvedPuzzle1)
         {
             // Already solved before
-            //ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, 2.ToString());
+           
             ShowTranslatedText(rune2, normalFontAsset, normalFontSize, "Use");
             ShowTranslatedText(rune3, normalFontAsset, normalFontSize, "stop");
             ShowTranslatedText(rune4, normalFontAsset, normalFontSize, "stone.");
@@ -77,7 +78,7 @@ public class Puzzle2Translator : MonoBehaviour
             {
                 // if player pressed the corect rune button shown on the scren --> PlayerInput.cs
                 GlobalVariableManager.solvedPuzzle2 = true;
-                
+                hint1.SetActive(true);
             }
         }
     }
