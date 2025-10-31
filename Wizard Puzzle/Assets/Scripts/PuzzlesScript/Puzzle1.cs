@@ -10,6 +10,8 @@ public class Puzzle1 : MonoBehaviour
     public TextMeshProUGUI rune2;
     public TextMeshProUGUI rune3;
     public GameObject hint1;
+   // public GameObject hint2;
+    //public GameObject hint3;
 
     private float normalFontSize = 8f;
 
@@ -24,6 +26,8 @@ public class Puzzle1 : MonoBehaviour
             ShowTranslatedText(rune2, normalFontAsset, normalFontSize, "sealing");
             ShowTranslatedText(rune3, normalFontAsset, normalFontSize, "button");
             hint1.SetActive(true);
+            //hint2.SetActive(true);
+          //  hint3.SetActive(true);
         }
     }
     private void Update()
