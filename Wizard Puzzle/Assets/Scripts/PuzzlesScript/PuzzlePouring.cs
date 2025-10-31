@@ -45,27 +45,27 @@ public class PuzzlePouring : MonoBehaviour
     {
         if (!hasPickedFill)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.H))
             {
                 pickedFill = fillImages[0].sprite;
                 hasPickedFill = true;
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            else if (Input.GetKeyDown(KeyCode.J))
             {
                 pickedFill = fillImages[1].sprite;
                 hasPickedFill = true;
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            else if (Input.GetKeyDown(KeyCode.L))
             {
                 pickedFill = fillImages[2].sprite;
                 hasPickedFill = true;
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            else if (Input.GetKeyDown(KeyCode.K))
             {
                 pickedFill = fillImages[3].sprite;
                 hasPickedFill = true;
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            else if (Input.GetKeyDown(KeyCode.W))
             {
                 pickedFill = fillImages[4].sprite;
                 hasPickedFill = true;
@@ -88,7 +88,7 @@ public class PuzzlePouring : MonoBehaviour
     private void PlayerPouringInput()
     {
         // change it to PlayerInput later. 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.Space))
         {
             isPouring = true;
         }
