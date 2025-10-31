@@ -9,6 +9,7 @@ public class Puzzle2Translator : MonoBehaviour
     public TextMeshProUGUI rune2;
     public TextMeshProUGUI rune3;
     public TextMeshProUGUI rune4;
+    public TextMeshProUGUI titleRune;
 
 
     
@@ -26,6 +27,7 @@ public class Puzzle2Translator : MonoBehaviour
             ShowTranslatedText(rune2, normalFontAsset, normalFontSize, "Use");
             ShowTranslatedText(rune3, normalFontAsset, normalFontSize, "stop");
             ShowTranslatedText(rune4, normalFontAsset, normalFontSize, "stone.");
+            ShowTranslatedText(titleRune, normalFontAsset, normalFontSize, "4");
 
 
             
@@ -43,8 +45,8 @@ public class Puzzle2Translator : MonoBehaviour
         {
             string outPutText2 = "stop";
             ShowTranslatedText(rune3, normalFontAsset, normalFontSize, outPutText2);
-            //string outPutText =2.ToString();
-            // ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, outPutText);
+            string outPutText = "4";
+             ShowTranslatedText(titleRune, normalFontAsset, 50, outPutText);
         }
         else if (BarcodeTest.currentCode.Trim() == "Num")
         {

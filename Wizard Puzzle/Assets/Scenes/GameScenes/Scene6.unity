@@ -1572,6 +1572,7 @@ MonoBehaviour:
   rune2: {fileID: 617494709}
   rune3: {fileID: 1518915990}
   rune4: {fileID: 1960580338}
+  titleRune: {fileID: 704816883}
 --- !u!1 &1360596130
 GameObject:
   m_ObjectHideFlags: 0
