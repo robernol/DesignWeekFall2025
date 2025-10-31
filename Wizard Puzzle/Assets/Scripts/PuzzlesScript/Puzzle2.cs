@@ -45,8 +45,17 @@ public class Puzzle2 : MonoBehaviour
             ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 4.ToString());
         }
 
-        GoalBarRandomnizer();
-        pointerSpeed = Random.Range(minSpeed, maxSpeed);
+        if (GlobalVariableManager.solvedPuzzle4)
+        {
+            pointerSpeed = 0f;
+            hint.SetActive(true);
+        } else
+        {
+            pointerSpeed = Random.Range(minSpeed, maxSpeed);
+        }
+
+            GoalBarRandomnizer();
+        
         oriSpeed = pointerSpeed;
         direction = 1;
 
