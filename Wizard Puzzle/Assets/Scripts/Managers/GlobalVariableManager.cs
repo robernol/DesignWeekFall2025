@@ -14,8 +14,10 @@ public class GlobalVariableManager : MonoBehaviour
     public static bool solvedPuzzle6 { get; set; } = false;
 
     public static bool timeIsDone { get; set; } = false;
+    public static bool timerShouldBeActive = false;
 
-   // [Range(0f,1f)] public static float chanceToLoseGame { get; set; } = 0.0f;
+
+    // [Range(0f,1f)] public static float chanceToLoseGame { get; set; } = 0.0f;
 
 
     private void Awake()
@@ -38,7 +40,7 @@ public class GlobalVariableManager : MonoBehaviour
             GameLose();
         }
     }
-
+    #region unse stuff
     //private IEnumerator LoseChanceCouroutine()
     //{
     //    while (true)
@@ -62,10 +64,15 @@ public class GlobalVariableManager : MonoBehaviour
     //        GameLose();
     //    }
     //}
+    #endregion
 
     private void GameLose()
     {
-        SceneManager.LoadScene("Lose");
+        if (SceneManager.GetActiveScene().name != "Lose") // prevent infinite reloads
+        {
+            timeIsDone = false;  // Reset before scene load
+            SceneManager.LoadScene("Lose");
+        }
     }
 
 }

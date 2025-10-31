@@ -8,13 +8,21 @@ public class LoseScene : MonoBehaviour
         GameObject persistentRoot = GameObject.Find("PersistentObjectsParent");
         if (persistentRoot != null)
         {
-            Transform timerCanvas = persistentRoot.transform.Find("TimerCanvas");
-            Transform timerManager = persistentRoot.transform.Find("TimerManager");
+            Transform timerCanvas = persistentRoot.transform.Find("Timer");
+            //Transform timerManager = persistentRoot.transform.Find("TimerManager");
 
             if (timerCanvas != null) Destroy(timerCanvas.gameObject);
-            if (timerManager != null) Destroy(timerManager.gameObject);
+          //  if (timerManager != null) Destroy(timerManager.gameObject);
 
-            Debug.Log("Destroyed Timer objects inside PersistentObjectsParent");
+            
+        }
+
+        GameObject timer = GameObject.Find("Timer(Clone)");
+        if (timer != null)
+        {
+
+             Destroy(timer.gameObject);
+
         }
     }
 
@@ -23,7 +31,6 @@ public class LoseScene : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             // Playerinput.B4
-            Debug.Log("restart");
             RestartGameButton();
         }
     }
@@ -36,6 +43,9 @@ public class LoseScene : MonoBehaviour
         GlobalVariableManager.solvedPuzzle4 = false;
         GlobalVariableManager.solvedPuzzle5 = false;
         GlobalVariableManager.solvedPuzzle6 = false;
+
+        GlobalVariableManager.timeIsDone = false;
+        GlobalVariableManager.timerShouldBeActive = true; // tell Scene1 to spawn the timer again
 
         SceneManager.LoadScene("Scene1");
     }
