@@ -64,31 +64,31 @@ public class PuzzlePouring : MonoBehaviour
     {
         if (!hasPickedFill)
         {
-            if (Input.GetKeyDown(KeyCode.H))
+            if (PlayerInput.B4IsPressed)
             {
                 // PlayerInput.B4
                 pickedFill = fillImages[0].sprite;
                 hasPickedFill = true;
             }
-            else if (Input.GetKeyDown(KeyCode.J))
+            else if (PlayerInput.B1IsPressed)
             {
                 // PlayerInput.B1
                 pickedFill = fillImages[1].sprite;
                 hasPickedFill = true;
             }
-            else if (Input.GetKeyDown(KeyCode.L))
+            else if (PlayerInput.B2IsPressed)
             {
                 // PlayerInput.B2
                 pickedFill = fillImages[2].sprite;
                 hasPickedFill = true;
             }
-            else if (Input.GetKeyDown(KeyCode.K))
+            else if (PlayerInput.B3IsPressed)
             {
                 // PlayerInput.B3
                 pickedFill = fillImages[3].sprite;
                 hasPickedFill = true;
             }
-            else if (Input.GetKeyDown(KeyCode.W))
+            else if (PlayerInput.B5IsPressed)
             {
                 // PlayerInput.B5
                 pickedFill = fillImages[4].sprite;

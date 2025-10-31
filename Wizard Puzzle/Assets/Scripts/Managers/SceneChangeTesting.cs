@@ -41,7 +41,6 @@ public class SceneChangeTesting : MonoBehaviour
             else if (PlayerInput.B5IsPressed)
             {
                 LoadPuzzleScene("Scene6");
-               // PlayerInput.B5IsPressed = false;
             }
             else if (GlobalVariableManager.solvedPuzzle5)
             {

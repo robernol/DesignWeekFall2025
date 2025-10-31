@@ -17,7 +17,7 @@ public class PlayerInput : MonoBehaviour
 
     // debounce the w key
     private float debounceTime = 0.2f;  // 200 ms debounce delay
-    private float lastWPressTime = -1f;
+    private float lastWPressTime = 0f;
 
 
 
@@ -74,15 +74,13 @@ public class PlayerInput : MonoBehaviour
         {
             B5IsPressed = true;
             Debug.Log("w");
-            lastWPressTime = Time.time;
-
-            //if (B5IsPressed && lastWPressTime + debounceTime >= Time.time) ;
+            lastWPressTime = Time.time;          
 
         }
         else B5IsPressed = false;
         #endregion
 
-            #region For holding input
+        #region For holding input
         if (Input.GetMouseButton(1))
         {
             T1IsHeld = true;
