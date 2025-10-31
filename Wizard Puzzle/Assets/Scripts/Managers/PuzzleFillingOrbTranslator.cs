@@ -10,6 +10,10 @@ public class PuzzleFillingOrbTranslator : MonoBehaviour
     public TextMeshProUGUI rune3;
     public TextMeshProUGUI rune4;
     public TextMeshProUGUI rune5;
+    public GameObject controls;
+    bool sipScanned = false;
+    bool numScanned = false;
+    bool lobScanned = false;
 
     private float normalFontSize = 8f;
 
@@ -21,18 +25,21 @@ public class PuzzleFillingOrbTranslator : MonoBehaviour
             ShowTranslatedText(rune1, normalFontAsset, normalFontSize, outPutText1);
             string outPutText2 = "spirit color";
             ShowTranslatedText(rune3, normalFontAsset, 7, outPutText2);
+            sipScanned = true;
         }
         else if (BarcodeTest.currentCode.Trim() == "Num")
         {
-            string outPutText1 = "essencial";
+            string outPutText1 = "essence";
             ShowTranslatedText(rune2, normalFontAsset, normalFontSize, outPutText1);
             string outPutText2 = "weaken";
             ShowTranslatedText(rune4, normalFontAsset, normalFontSize, outPutText2);
+            numScanned = true;
         }
         else if (BarcodeTest.currentCode.Trim() == "Lob")
         {
             string outPutText = "break free";
             ShowTranslatedText(rune5, normalFontAsset, normalFontSize, outPutText);
+            lobScanned= true;
         }
     }
 
@@ -42,4 +49,6 @@ public class PuzzleFillingOrbTranslator : MonoBehaviour
         targetText.fontSize = targetFontSize;
         targetText.text = theOutputText;
     }
+
+  
 }
