@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
     public static bool B2IsPressed { get; private set; }
     public static bool B3IsPressed { get; private set; }
     public static bool B4IsPressed { get; private set; }
-    public static bool B5IsPressed { get; private set; }
+    public static bool B5IsPressed { get;  set; }
 
     public static bool T1IsHeld { get; private set; }
     public static bool T2IsHeld { get; private set; }
@@ -63,23 +63,26 @@ public class PlayerInput : MonoBehaviour
         }
         else B3IsPressed = false;
         
-        if(Input.GetKeyDown(KeyCode.K))
+        if(Input.GetKeyDown(KeyCode.K) )
         {
             B4IsPressed = true;
             Debug.Log("k");
         }
         else B4IsPressed = false;
-        
-        if(Input.GetKeyDown(KeyCode.W) && Time.time - lastWPressTime > debounceTime)
+
+        if (Input.GetKeyDown(KeyCode.W) && Time.time - lastWPressTime > debounceTime)
         {
             B5IsPressed = true;
             Debug.Log("w");
             lastWPressTime = Time.time;
 
-        } else B5IsPressed = false;
+            //if (B5IsPressed && lastWPressTime + debounceTime >= Time.time) ;
+
+        }
+        else B5IsPressed = false;
         #endregion
 
-        #region For holding input
+            #region For holding input
         if (Input.GetMouseButton(1))
         {
             T1IsHeld = true;

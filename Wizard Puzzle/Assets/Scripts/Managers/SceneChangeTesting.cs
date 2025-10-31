@@ -38,9 +38,10 @@ public class SceneChangeTesting : MonoBehaviour
             {
                 LoadPuzzleScene("Scene4");
             }
-            else if (Input.GetKeyDown(KeyCode.W))
+            else if (PlayerInput.B5IsPressed)
             {
                 LoadPuzzleScene("Scene6");
+               // PlayerInput.B5IsPressed = false;
             }
             else if (GlobalVariableManager.solvedPuzzle5)
             {
