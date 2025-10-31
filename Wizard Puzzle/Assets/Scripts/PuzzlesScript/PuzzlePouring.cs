@@ -21,9 +21,11 @@ public class PuzzlePouring : MonoBehaviour
     [Header("Puzzle Setting")]
     public List<Image> fillImages = new List<Image>();
     public Sprite whiteFill;
+    public GameObject shine; // this is to show that the puzzle is complete. sprite is also called shine. 
 
     private void Start()
     {
+        shine.SetActive(false);
         if (GlobalVariableManager.solvedPuzzle2)
         {
             ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 3.ToString());
@@ -105,6 +107,7 @@ public class PuzzlePouring : MonoBehaviour
         {
             // Puzzle Solved
             GlobalVariableManager.solvedPuzzle3 = true;
+            shine.SetActive(true);
         }   
         else if(targetFill.sprite != fillImages[3].sprite && bottleSlider.value >= bottleSlider.maxValue)
         {
