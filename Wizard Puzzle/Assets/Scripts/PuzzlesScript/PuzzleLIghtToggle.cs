@@ -60,8 +60,9 @@ public class PuzzleLIghtToggle : MonoBehaviour
     private void SwitchLight()
     {
         // change this into PlayerInput.cs later
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.W))
         {
+            //Playeinput.B5
             lightOn = !lightOn;
         }
     }

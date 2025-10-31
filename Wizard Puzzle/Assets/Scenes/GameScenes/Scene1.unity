@@ -2334,8 +2334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimerScript
   minText: {fileID: 1598777052}
   secText: {fileID: 1902932589}
-  startingMinutes: 5
-  startingSeconds: 30
+  startingMinutes: 0
+  startingSeconds: 3
 --- !u!1 &1557553306
 GameObject:
   m_ObjectHideFlags: 0

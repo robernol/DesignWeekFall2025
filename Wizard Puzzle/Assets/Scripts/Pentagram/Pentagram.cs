@@ -25,7 +25,7 @@ public class Pentagram : MonoBehaviour
         l4 = false;
         l5 = false;
         completed = false;
-        if (GlobalVariableManager.solvedPuzzle2 == true)
+        if (GlobalVariableManager.solvedPuzzle4 == true)
         {
             completed = true;
         }

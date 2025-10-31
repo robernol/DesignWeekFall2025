@@ -1,15 +1,20 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FinalPuzzleScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public TMP_FontAsset normalFontAsset;
+    public TextMeshProUGUI puzzleNum;
+
+    private void Start()
     {
-        
+        if (GlobalVariableManager.solvedPuzzle5)
+        {
+            ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 6.ToString());
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
@@ -18,4 +23,11 @@ public class FinalPuzzleScript : MonoBehaviour
             Debug.Log("key down");
         }
     }
+    private void ShowTranslatedText(TextMeshProUGUI targetText, TMP_FontAsset targetFont, float targetFontSize, string theOutputText)
+    {
+        targetText.font = targetFont;
+        targetText.fontSize = targetFontSize;
+        targetText.text = theOutputText;
+    }
+
 }

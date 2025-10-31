@@ -8,6 +8,9 @@ public class PuzzlePouring : MonoBehaviour
     [Header("Puzzle 3 Text References")]
     public TMP_FontAsset normalFontAsset;
     public TextMeshProUGUI puzzleNum;
+    public GameObject instruction1;
+    public GameObject instruction2;
+    public GameObject nextHint;
 
     [Header("Pouring Setting")]
     public Slider bottleSlider;
@@ -26,12 +29,26 @@ public class PuzzlePouring : MonoBehaviour
     private void Start()
     {
         shine.SetActive(false);
+        instruction1.SetActive(false);
+        instruction2.SetActive(false);
+        nextHint.SetActive(false);
+
+        bottleSlider.value = bottleSlider.minValue;
+
         if (GlobalVariableManager.solvedPuzzle2)
         {
             ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 3.ToString());
+            instruction1.SetActive(true);
+            instruction2.SetActive(true);
         }
 
-        bottleSlider.value = bottleSlider.minValue;
+        if(GlobalVariableManager.solvedPuzzle3)
+        {
+            targetFill.sprite = fillImages[3].sprite;
+            bottleSlider.value += bottleSlider.maxValue;
+            shine.SetActive(true);
+        }
+        
     }
     private void Update()
     {
@@ -49,26 +66,31 @@ public class PuzzlePouring : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.H))
             {
+                // PlayerInput.B4
                 pickedFill = fillImages[0].sprite;
                 hasPickedFill = true;
             }
             else if (Input.GetKeyDown(KeyCode.J))
             {
+                // PlayerInput.B1
                 pickedFill = fillImages[1].sprite;
                 hasPickedFill = true;
             }
             else if (Input.GetKeyDown(KeyCode.L))
             {
+                // PlayerInput.B2
                 pickedFill = fillImages[2].sprite;
                 hasPickedFill = true;
             }
             else if (Input.GetKeyDown(KeyCode.K))
             {
+                // PlayerInput.B3
                 pickedFill = fillImages[3].sprite;
                 hasPickedFill = true;
             }
             else if (Input.GetKeyDown(KeyCode.W))
             {
+                // PlayerInput.B5
                 pickedFill = fillImages[4].sprite;
                 hasPickedFill = true;
             }
@@ -108,13 +130,14 @@ public class PuzzlePouring : MonoBehaviour
             // Puzzle Solved
             GlobalVariableManager.solvedPuzzle3 = true;
             shine.SetActive(true);
+            nextHint.SetActive(true);
         }   
         else if(targetFill.sprite != fillImages[3].sprite && bottleSlider.value >= bottleSlider.maxValue)
         {
             bottleSlider.value = bottleSlider.minValue;
             targetFill.sprite = whiteFill;
             hasPickedFill = false;
-            GlobalVariableManager.chanceToLoseGame += 0.05f;
+           // GlobalVariableManager.chanceToLoseGame += 0.05f;
         }
     }
 

@@ -5,7 +5,7 @@ public class PentagramTranlation : MonoBehaviour
 {
     [Header("Puzzle 1 References")]
     public TMP_FontAsset normalFontAsset;
-    public TextMeshProUGUI rune1, rune2, rune3;
+    public TextMeshProUGUI rune2, rune3;
     private float normalFontSize = 8f;
 
     private void ShowTranslatedText(TextMeshProUGUI targetText, TMP_FontAsset targetFont, float targetFontSize, string theOutputText)
@@ -17,13 +17,7 @@ public class PentagramTranlation : MonoBehaviour
 
     public void UpdateOutputTextWithCondition()
     {
-        if (BarcodeTest.currentCode.Trim() == "Sip")
-        {
-            string outPutText = 5.ToString();
-            ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, outPutText);
-
-        }
-        else if (BarcodeTest.currentCode.Trim() == "Num")
+        if (BarcodeTest.currentCode.Trim() == "Num")
         {
             string outPutText = "unholy";
             ShowTranslatedText(rune2, normalFontAsset, normalFontSize, outPutText);

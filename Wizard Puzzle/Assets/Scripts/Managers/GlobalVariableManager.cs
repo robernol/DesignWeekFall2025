@@ -15,7 +15,7 @@ public class GlobalVariableManager : MonoBehaviour
 
     public static bool timeIsDone { get; set; } = false;
 
-    [Range(0f,1f)] public static float chanceToLoseGame { get; set; } = 0.0f;
+   // [Range(0f,1f)] public static float chanceToLoseGame { get; set; } = 0.0f;
 
 
     private void Awake()
@@ -31,34 +31,37 @@ public class GlobalVariableManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Update()
     {
-        StartCoroutine(LoseChanceCouroutine());
-    }
-
-    private IEnumerator LoseChanceCouroutine()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(3f);
-            LoseConsition();
-        }
-    }
-
-    private void LoseConsition()
-    {
-        float escape = Random.Range(0.3f, 1.0f);    
-     //   Debug.Log(escape + " vs " + chanceToLoseGame);
-
-        if (escape < chanceToLoseGame)
-        {
-            GameLose();
-        }
-        else if (timeIsDone)
+        if (timeIsDone)
         {
             GameLose();
         }
     }
+
+    //private IEnumerator LoseChanceCouroutine()
+    //{
+    //    while (true)
+    //    {
+    //        yield return new WaitForSeconds(3f);
+    //        LoseConsition();
+    //    }
+    //}
+
+    //private void LoseConsition()
+    //{
+    //    float escape = Random.Range(0.3f, 1.0f);    
+    // //   Debug.Log(escape + " vs " + chanceToLoseGame);
+
+    //    if (escape < chanceToLoseGame)
+    //    {
+    //        GameLose();
+    //    }
+    //    else if (timeIsDone)
+    //    {
+    //        GameLose();
+    //    }
+    //}
 
     private void GameLose()
     {

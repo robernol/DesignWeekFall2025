@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Puzzle2 : MonoBehaviour
 {
+    // THIS IS ACTUALLY PUZZLE 4, IGNORE THE SCRIPT NAME
+
     [Header("Puzzle 2 Text References")]
     public TMP_FontAsset normalFontAsset;
     public TextMeshProUGUI puzzleNum;
-    public GameObject instruction;
     public GameObject hint;
 
     [Header("Bar References")]
@@ -21,6 +22,8 @@ public class Puzzle2 : MonoBehaviour
 
     [Header("Pointer")]
     public GameObject pointer;
+    public SpriteRenderer redOverlay;
+    public float redCoolDownTime;
     public float rightLimit;
     public float leftLimit;
     public float minSpeed;
@@ -30,34 +33,39 @@ public class Puzzle2 : MonoBehaviour
     private int direction;
     private float oriSpeed;
 
+    private Color redOverlayColor;
+
 
     private void Start()
     {
-        
         hint.SetActive(false);
 
-        if (GlobalVariableManager.solvedPuzzle1)
+        if (GlobalVariableManager.solvedPuzzle3)
         {
-            ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 2.ToString());
-            instruction.SetActive(true);
+            ShowTranslatedText(puzzleNum, normalFontAsset, puzzleNum.fontSize, 4.ToString());
         }
 
         GoalBarRandomnizer();
         pointerSpeed = Random.Range(minSpeed, maxSpeed);
         oriSpeed = pointerSpeed;
         direction = 1;
+
+        redOverlayColor = redOverlay.color;
+        redOverlayColor.a = 0;
     }
 
     private void Update()
     {
         PointerMovement();
 
-        // replace with PlayerInput.button 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.K))
         {
+            //PlayerInput.B4
             pointerSpeed = 0;
             EvaluatePointerStopBounds();
         }
+
+        RedOverlayCoolDownTimer();
     }
 
     private void ShowTranslatedText(TextMeshProUGUI targetText, TMP_FontAsset targetFont, float targetFontSize, string theOutputText)
@@ -128,12 +136,26 @@ public class Puzzle2 : MonoBehaviour
     {
         // do stuff if player success
         hint.SetActive(true);
-        GlobalVariableManager.solvedPuzzle2 = true;
+        GlobalVariableManager.solvedPuzzle4 = true;
     }
-
     public void OnPointerExitGoal()
     {
-        pointerSpeed = oriSpeed;
-        GlobalVariableManager.chanceToLoseGame += 0.05f;
+        redOverlayColor.a = 1;
+        redOverlay.color = redOverlayColor;
+       // GlobalVariableManager.chanceToLoseGame += 0.05f;
     }
+    private void RedOverlayCoolDownTimer()
+    {
+        redOverlay.color = redOverlayColor;
+        if (redOverlayColor.a > 0)
+        {
+            redOverlayColor.a -= redCoolDownTime * Time.deltaTime;
+        } else if (redOverlayColor.a < 0)
+        {
+            pointerSpeed = oriSpeed;
+            redOverlayColor.a = 0;
+        }
+    }
+
+
 }

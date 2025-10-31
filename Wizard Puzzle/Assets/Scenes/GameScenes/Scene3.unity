@@ -1055,7 +1055,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PentagramTranlation
   normalFontAsset: {fileID: 11400000, guid: 0d8a28dcdbca4dc42b1b48c1dc3aec16, type: 2}
-  rune1: {fileID: 438097642}
   rune2: {fileID: 1202599497}
   rune3: {fileID: 1073595515}
 --- !u!4 &1091447696
@@ -2103,11 +2102,11 @@ SceneRoots:
   - {fileID: 532197101}
   - {fileID: 361204072}
   - {fileID: 1807208303}
+  - {fileID: 1337930653}
+  - {fileID: 1091447696}
   - {fileID: 1748348245}
   - {fileID: 438097641}
   - {fileID: 1477336234}
   - {fileID: 2016951043}
   - {fileID: 2101657464}
   - {fileID: 1543958675}
-  - {fileID: 1091447696}
-  - {fileID: 1337930653}
