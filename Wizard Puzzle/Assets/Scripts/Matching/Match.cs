@@ -76,12 +76,15 @@ public class Match : MonoBehaviour
                 }
             }
 
-            if ((Input.GetKeyDown(KeyCode.Space)) && !completed)
+            if (GlobalVariableManager.solvedPuzzle1)
             {
-                timer = Time.time + displayTime;
-                SequenceRandomizer();
-                isDisplayingSequence = true;
-                inSequence = 0;
+                if ((Input.GetKeyDown(KeyCode.Space)) && !completed)
+                {
+                    timer = Time.time + displayTime;
+                    SequenceRandomizer();
+                    isDisplayingSequence = true;
+                    inSequence = 0;
+                }
             }
         }
         else
@@ -209,7 +212,7 @@ public class Match : MonoBehaviour
             {
                 inSequence++;
                 if (inSequence > 4)
-                {
+                {   
                     completed = true;
                     st.color = Color.mediumPurple;
                     sb.color = Color.mediumPurple;
