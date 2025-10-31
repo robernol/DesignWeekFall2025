@@ -10,6 +10,9 @@ public class Puzzle1 : MonoBehaviour
     public TextMeshProUGUI rune2;
     public TextMeshProUGUI rune3;
     public GameObject hint1;
+    bool sipScanned = false;
+    bool numScanned = false;
+    bool lobScanned = false;
    // public GameObject hint2;
     //public GameObject hint3;
 
@@ -42,14 +45,23 @@ public class Puzzle1 : MonoBehaviour
         {
             string outPutText = 1.ToString();
             ShowTranslatedText(rune1, normalFontAsset, rune1.fontSize, outPutText);
+            sipScanned = true;
+
+
         } else if (BarcodeTest.currentCode.Trim() == "Num")
         {
             string outPutText = "sealing";
             ShowTranslatedText(rune2, normalFontAsset, normalFontSize, outPutText);
+            numScanned = true;
+
+
         } else if (BarcodeTest.currentCode.Trim() == "Lob")
         {
             string outPutText = "button";
             ShowTranslatedText(rune3, normalFontAsset, normalFontSize, outPutText);
+            lobScanned = true;
+
+
         }
     }
 
@@ -63,13 +75,12 @@ public class Puzzle1 : MonoBehaviour
    
     private void CheckPuzzle1State()
     {
-        if (rune1.font == normalFontAsset && rune2.font == normalFontAsset && rune3.font == normalFontAsset)
+        if (sipScanned && numScanned && lobScanned)
         {
-            if (PlayerInput.B2IsPressed)
-            {
-                GlobalVariableManager.solvedPuzzle1 = true;
-                hint1.SetActive(true);
-            }
+            GlobalVariableManager.solvedPuzzle1 = true;
+            Debug.Log("finished");
+            hint1.SetActive(true);
+            
         }
     }
 }
